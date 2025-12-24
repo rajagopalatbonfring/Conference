@@ -1,0 +1,735 @@
+<!-- CONFERENCE WEBSITE - PROGRAM PAGE (/program) -->
+<!-- Production-Ready Code - Professional & Clean -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Program | ICAC 2025 - Schedule & Sessions</title>
+    <meta name="description" content="ICAC 2025 conference program and schedule. September 15-17, 2025. Keynotes, sessions, papers, and timings. Download schedule PDF.">
+    
+    <style>
+        :root {
+            --color-primary: #0891b2;
+            --color-primary-hover: #0e7490;
+            --color-secondary: #64748b;
+            --color-accent: #f59e0b;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-bg: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-white: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-white);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--color-white);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-xl);
+        }
+
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary), #06b6d4);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .day-section {
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .day-header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--spacing-lg);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .schedule-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-lg);
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-item:hover {
+            background: var(--color-bg);
+        }
+
+        .time {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 0.95rem;
+        }
+
+        .event-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .event-details {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .session-type {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .session-type.keynote {
+            background: #8b5cf6;
+        }
+
+        .session-type.break {
+            background: #06b6d4;
+        }
+
+        .session-type.workshop {
+            background: #10b981;
+        }
+
+        .session-type.presentation {
+            background: var(--color-primary);
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .track-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .track-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+        }
+
+        .track-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .track-info {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: var(--spacing-md);
+            margin-right: var(--spacing-md);
+        }
+
+        .btn:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--color-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+               footer {
+            background: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-white);
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: var(--spacing-lg);
+            }
+
+            .schedule-item {
+                grid-template-columns: 1fr;
+            }
+
+            .time {
+                margin-bottom: var(--spacing-md);
+            }
+
+            .tracks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">ICAC 2025</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Important-Date.html">Dates</a></li>
+                    <li><a href="/Speakers.html">Speakers</a></li>
+                    <li><a href="/program.html">Programs</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue</a></li>
+                    <li><a href="/Registration.html">Register</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/Contact.html" class="cta-button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Conference Program</h1>
+        <p>Schedule & Sessions - September 15-17, 2025</p>
+    </div>
+
+    <div class="container">
+        <!-- OVERVIEW -->
+        <section>
+            <h2>Program Overview</h2>
+            <p>ICAC 2025 brings together the latest research in advanced computing and communication across three days of keynotes, presentations, workshops, and networking sessions. The conference features 6 parallel tracks with 50+ research papers and presentations.</p>
+            <a href="#" class="btn">📥 Download Full Schedule (PDF)</a>
+            <a href="#" class="btn btn-secondary">📅 Add to Calendar</a>
+        </section>
+
+        <!-- DAY 1 SCHEDULE -->
+        <section>
+            <h2>Day 1 - Monday, September 15, 2025</h2>
+            
+            <div class="schedule-grid">
+                <div class="day-section">
+                    <div class="day-header">📅 Monday, September 15</div>
+                    
+                    <div class="schedule-item">
+                        <div class="time">08:00 - 09:00</div>
+                        <div>
+                            <div class="event-title">Registration & Welcome Breakfast</div>
+                            <div class="event-details">Registration desk open | Networking breakfast for early arrivals</div>
+                            <span class="session-type break">Registration</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">09:00 - 09:30</div>
+                        <div>
+                            <div class="event-title">Opening Ceremony</div>
+                            <div class="event-details">Welcome remarks | Conference overview | Guest speaker</div>
+                            <span class="session-type">Opening</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">09:30 - 10:30</div>
+                        <div>
+                            <div class="event-title">Keynote: "Future of AI in Cloud Computing"</div>
+                            <div class="event-details">Speaker: Dr. Rajesh Kumar (MIT) | Main Hall</div>
+                            <span class="session-type keynote">Keynote</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">10:30 - 11:00</div>
+                        <div>
+                            <div class="event-title">Coffee Break & Networking</div>
+                            <div class="event-details">Refreshments | Sponsor booths open</div>
+                            <span class="session-type break">Break</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">11:00 - 12:30</div>
+                        <div>
+                            <div class="event-title">Parallel Sessions - Track 1 & 2</div>
+                            <div class="event-details">
+                                Track 1: Machine Learning & AI (Hall A)<br>
+                                Track 2: Networks & Communication (Hall B)
+                            </div>
+                            <span class="session-type presentation">Presentations</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">12:30 - 13:30</div>
+                        <div>
+                            <div class="event-title">Lunch & Networking</div>
+                            <div class="event-details">Lunch provided | Informal networking</div>
+                            <span class="session-type break">Lunch</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">13:30 - 15:00</div>
+                        <div>
+                            <div class="event-title">Parallel Sessions - Track 3 & 4</div>
+                            <div class="event-details">
+                                Track 3: Data Science & Analytics (Hall A)<br>
+                                Track 4: Software Engineering (Hall B)
+                            </div>
+                            <span class="session-type presentation">Presentations</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">15:00 - 15:30</div>
+                        <div>
+                            <div class="event-title">Coffee Break</div>
+                            <div class="event-details">Refreshments | Sponsor interactions</div>
+                            <span class="session-type break">Break</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">15:30 - 17:00</div>
+                        <div>
+                            <div class="event-title">Parallel Sessions - Track 5 & 6</div>
+                            <div class="event-details">
+                                Track 5: Emerging Technologies (Hall A)<br>
+                                Track 6: Cybersecurity (Hall B)
+                            </div>
+                            <span class="session-type presentation">Presentations</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">17:00 - 18:30</div>
+                        <div>
+                            <div class="event-title">Welcome Reception & Networking Dinner</div>
+                            <div class="event-details">Cocktails | Networking mixer | Sponsor showcase</div>
+                            <span class="session-type break">Networking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DAY 2 SCHEDULE -->
+        <section>
+            <h2>Day 2 - Tuesday, September 16, 2025</h2>
+            
+            <div class="schedule-grid">
+                <div class="day-section">
+                    <div class="day-header">📅 Tuesday, September 16</div>
+                    
+                    <div class="schedule-item">
+                        <div class="time">08:30 - 09:00</div>
+                        <div>
+                            <div class="event-title">Breakfast & Registration</div>
+                            <div class="event-details">Networking breakfast | Late registration</div>
+                            <span class="session-type break">Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">09:00 - 10:00</div>
+                        <div>
+                            <div class="event-title">Keynote: "Edge Computing & 6G Networks"</div>
+                            <div class="event-details">Speaker: Dr. Priya Sharma (Google Research) | Main Hall</div>
+                            <span class="session-type keynote">Keynote</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">10:00 - 11:30</div>
+                        <div>
+                            <div class="event-title">Workshop 1: Cloud Architecture Best Practices</div>
+                            <div class="event-details">Interactive workshop | Limited seats (50 max)</div>
+                            <span class="session-type workshop">Workshop</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">10:00 - 11:30</div>
+                        <div>
+                            <div class="event-title">Workshop 2: Blockchain Security</div>
+                            <div class="event-details">Interactive workshop | Hands-on session</div>
+                            <span class="session-type workshop">Workshop</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">11:30 - 12:00</div>
+                        <div>
+                            <div class="event-title">Coffee Break</div>
+                            <div class="event-details">Refreshments | Networking</div>
+                            <span class="session-type break">Break</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">12:00 - 13:30</div>
+                        <div>
+                            <div class="event-title">Keynote Panel Discussion</div>
+                            <div class="event-details">Industry leaders panel | Q&A with audience | Main Hall</div>
+                            <span class="session-type keynote">Panel</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">13:30 - 14:30</div>
+                        <div>
+                            <div class="event-title">Lunch</div>
+                            <div class="event-details">Lunch provided | Meet the sponsors</div>
+                            <span class="session-type break">Lunch</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">14:30 - 16:00</div>
+                        <div>
+                            <div class="event-title">Parallel Sessions - All Tracks</div>
+                            <div class="event-details">Paper presentations across 6 research tracks</div>
+                            <span class="session-type presentation">Presentations</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">16:00 - 16:30</div>
+                        <div>
+                            <div class="event-title">Coffee Break</div>
+                            <div class="event-details">Refreshments | Networking</div>
+                            <span class="session-type break">Break</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">16:30 - 18:00</div>
+                        <div>
+                            <div class="event-title">Parallel Sessions - All Tracks</div>
+                            <div class="event-details">Continued paper presentations</div>
+                            <span class="session-type presentation">Presentations</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">18:30 - 20:00</div>
+                        <div>
+                            <div class="event-title">Gala Dinner & Awards Ceremony</div>
+                            <div class="event-details">Awards for best papers | Networking dinner | Entertainment</div>
+                            <span class="session-type break">Social</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DAY 3 SCHEDULE -->
+        <section>
+            <h2>Day 3 - Wednesday, September 17, 2025</h2>
+            
+            <div class="schedule-grid">
+                <div class="day-section">
+                    <div class="day-header">📅 Wednesday, September 17</div>
+                    
+                    <div class="schedule-item">
+                        <div class="time">08:30 - 09:00</div>
+                        <div>
+                            <div class="event-title">Breakfast</div>
+                            <div class="event-details">Morning networking breakfast</div>
+                            <span class="session-type break">Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">09:00 - 10:00</div>
+                        <div>
+                            <div class="event-title">Keynote: "Quantum Computing: From Theory to Practice"</div>
+                            <div class="event-details">Speaker: Dr. Elena Rodriguez (Microsoft) | Main Hall</div>
+                            <span class="session-type keynote">Keynote</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">10:00 - 11:30</div>
+                        <div>
+                            <div class="event-title">Parallel Sessions - All Tracks</div>
+                            <div class="event-details">Final day paper presentations</div>
+                            <span class="session-type presentation">Presentations</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">11:30 - 12:00</div>
+                        <div>
+                            <div class="event-title">Coffee Break</div>
+                            <div class="event-details">Refreshments</div>
+                            <span class="session-type break">Break</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">12:00 - 13:00</div>
+                        <div>
+                            <div class="event-title">Closing Panel: "Future of Computing"</div>
+                            <div class="event-details">Expert panel discussion | Future trends and opportunities</div>
+                            <span class="session-type keynote">Panel</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">13:00 - 13:30</div>
+                        <div>
+                            <div class="event-title">Closing Remarks & Certificate Distribution</div>
+                            <div class="event-details">Conference closing | Certificates handed out</div>
+                            <span class="session-type">Closing</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">13:30 - 14:30</div>
+                        <div>
+                            <div class="event-title">Farewell Lunch</div>
+                            <div class="event-details">Final networking over lunch</div>
+                            <span class="session-type break">Lunch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH TRACKS -->
+        <section>
+            <h2>Research Tracks</h2>
+            <div class="tracks-grid">
+                <div class="track-card">
+                    <div class="track-name">🤖 Track 1: AI & Machine Learning</div>
+                    <div class="track-info">
+                        Deep learning, neural networks, computer vision, NLP, reinforcement learning, and AI applications
+                    </div>
+                </div>
+                <div class="track-card">
+                    <div class="track-name">📡 Track 2: Networks & Communication</div>
+                    <div class="track-info">
+                        5G/6G, SDN, network protocols, wireless communication, IoT networks, and mobile computing
+                    </div>
+                </div>
+                <div class="track-card">
+                    <div class="track-name">📊 Track 3: Data Science & Analytics</div>
+                    <div class="track-info">
+                        Big data, data mining, analytics, business intelligence, data visualization, and real-time processing
+                    </div>
+                </div>
+                <div class="track-card">
+                    <div class="track-name">💻 Track 4: Software Engineering</div>
+                    <div class="track-info">
+                        Agile development, software architecture, testing, DevOps, code quality, and software security
+                    </div>
+                </div>
+                <div class="track-card">
+                    <div class="track-name">🚀 Track 5: Emerging Technologies</div>
+                    <div class="track-info">
+                        Blockchain, AR/VR, edge computing, quantum computing, robotics, and autonomous systems
+                    </div>
+                </div>
+                <div class="track-card">
+                    <div class="track-name">🔐 Track 6: Cybersecurity</div>
+                    <div class="track-info">
+                        Network security, cryptography, threat detection, access control, privacy protection, and compliance
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section style="text-align: center; padding: var(--spacing-3xl); background: var(--color-bg); border-radius: 8px; margin-bottom: var(--spacing-3xl);">
+            <h2>Ready to Attend?</h2>
+            <p style="font-size: 1.125rem; margin-bottom: var(--spacing-xl); color: var(--color-text-light);">Join us for three days of cutting-edge research and networking</p>
+            <a href="/registration" class="btn" style="padding: var(--spacing-lg) var(--spacing-2xl); font-size: 1.125rem;">Register Now</a>
+            <a href="#" class="btn btn-secondary" style="padding: var(--spacing-lg) var(--spacing-2xl); font-size: 1.125rem;">Download Program (PDF)</a>
+        </section>
+    </div>
+
+    <footer>
+        <footer-content>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Registration.html">Registration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/Important-Date.html">Important Dates</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue & Logistics</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/Privacy.html">Privacy Policy</a></li>
+                    <li><a href="/Terms.html">Terms & Conditions</a></li>
+                    <li><a href="/Contact.html">Contact Us</a></li>
+                    <li><a href="/New.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </footer-content>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Conference on Advanced Computing & Communication. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

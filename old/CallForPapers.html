@@ -1,0 +1,718 @@
+<!-- CONFERENCE WEBSITE - CALL FOR PAPERS PAGE (/call-for-papers) -->
+<!-- Production-Ready Code - Professional & Clean -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call for Papers | ICAC 2025 - Submit Your Research</title>
+    <meta name="description" content="Submit your research paper to ICAC 2025. Scope, guidelines, templates, and review process. Deadline: March 31, 2025. Papers on advanced computing & communication welcome.">
+    <meta name="keywords" content="call for papers, submit paper, research paper, academic conference, ICAC 2025, submission deadline, peer review">
+    
+    <style>
+        :root {
+            --color-primary: #0891b2;
+            --color-primary-hover: #0e7490;
+            --color-secondary: #64748b;
+            --color-accent: #f59e0b;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-bg: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-white: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --border-radius: 8px;
+            --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-white);
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--color-white);
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-xl);
+        }
+
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary), #06b6d4);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .page-header h1 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        section h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: var(--spacing-md);
+        }
+
+        section h3 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            background: var(--color-white);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        tr:hover {
+            background: var(--color-bg);
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--color-bg);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--border-radius);
+        }
+
+        .card h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* LISTS */
+        ul, ol {
+            margin-left: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        ul li, ol li {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--color-primary);
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-right: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--color-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        /* CALLOUT */
+        .callout {
+            background: #fef3c7;
+            border-left: 4px solid var(--color-accent);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--border-radius);
+        }
+
+        .callout-title {
+            font-weight: 700;
+            color: #78350f;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* TRACK CARDS */
+        .track-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .track-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+        }
+
+        .track-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+        }
+
+        .track-card h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .track-card ul {
+            margin-left: var(--spacing-lg);
+        }
+
+        .track-card li {
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-white);
+        }
+        /* BREADCRUMB */
+        .breadcrumb {
+            padding: var(--spacing-lg) 0;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: var(--spacing-lg);
+            }
+
+            .page-header h1 {
+                font-size: var(--font-size-2xl);
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+
+            .track-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">ICAC 2025</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Important-Date.html">Dates</a></li>
+                    <li><a href="/Speakers.html">Speakers</a></li>
+                    <li><a href="/Program.html">Programs</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue</a></li>
+                    <li><a href="/Registration.html">Register</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/Contact.html" class="cta-button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h1>Call for Papers</h1>
+        <p>Submit Your Research & Innovation</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <strong>Call for Papers</strong>
+        </div>
+
+        <!-- SUBMISSION STATUS -->
+        <div class="callout">
+            <div class="callout-title">⏰ Submission Window Open</div>
+            <p><strong>Abstract Submission:</strong> January 5 - January 31, 2025</p>
+            <p><strong>Full Paper Submission:</strong> February 16 - March 31, 2025</p>
+            <p style="margin-top: var(--spacing-md);"><a href="#submit" class="btn">Submit Your Paper Now</a></p>
+        </div>
+
+        <!-- SUBMISSION OVERVIEW -->
+        <section>
+            <h2>Submission Information</h2>
+            <table>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Paper Length</strong></td>
+                    <td>8 pages (content) + 2 pages (references)</td>
+                </tr>
+                <tr>
+                    <td><strong>Format</strong></td>
+                    <td>PDF or DOCX</td>
+                </tr>
+                <tr>
+                    <td><strong>Citation Style</strong></td>
+                    <td>IEEE or ACM</td>
+                </tr>
+                <tr>
+                    <td><strong>Abstract Deadline</strong></td>
+                    <td>January 31, 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Full Paper Deadline</strong></td>
+                    <td>March 31, 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Notification Date</strong></td>
+                    <td>May 15, 2025</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- RESEARCH SCOPE -->
+        <section>
+            <h2>Research Topics & Tracks</h2>
+            <p>We invite researchers to submit original, unpublished work in the following areas:</p>
+            
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>🖥️ Advanced Computing</h4>
+                    <ul>
+                        <li>Machine Learning & AI</li>
+                        <li>Cloud Computing</li>
+                        <li>High-Performance Computing</li>
+                        <li>Quantum Computing</li>
+                        <li>IoT & Embedded Systems</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>📡 Networks & Communication</h4>
+                    <ul>
+                        <li>5G/6G Networks</li>
+                        <li>Wireless Communication</li>
+                        <li>Network Security</li>
+                        <li>SDN & NFV</li>
+                        <li>Satellite Communication</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>📊 Data Science & Analytics</h4>
+                    <ul>
+                        <li>Big Data Processing</li>
+                        <li>Data Mining</li>
+                        <li>Business Intelligence</li>
+                        <li>Real-time Analytics</li>
+                        <li>Data Privacy</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>💻 Software Engineering</h4>
+                    <ul>
+                        <li>Agile & DevOps</li>
+                        <li>Software Architecture</li>
+                        <li>Testing & QA</li>
+                        <li>Software Security</li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>🚀 Emerging Technologies</h4>
+                    <ul>
+                        <li>Blockchain & Web3</li>
+                        <li>AR/VR Technologies</li>
+                        <li>Robotics</li>
+                        <li>Autonomous Systems</li>
+                        <li>Green Computing</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>🔐 Cybersecurity</h4>
+                    <ul>
+                        <li>Network Security</li>
+                        <li>Cryptography</li>
+                        <li>Access Control</li>
+                        <li>Threat Detection</li>
+                        <li>Privacy Protection</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBMISSION GUIDELINES -->
+        <section>
+            <h2>How to Submit</h2>
+            <ol>
+                <li><strong>Create Account:</strong> Register on the submission portal (link below)</li>
+                <li><strong>Prepare Manuscript:</strong> Follow formatting guidelines and use provided templates</li>
+                <li><strong>Submit Abstract (Phase 1):</strong> Upload abstract, keywords, and author info by January 31</li>
+                <li><strong>Receive Notification:</strong> Editors notify of abstract acceptance/rejection by February 15</li>
+                <li><strong>Submit Full Paper (Phase 2):</strong> If abstract accepted, upload full paper by March 31</li>
+                <li><strong>Peer Review:</strong> 2-3 reviewers evaluate your paper (April-May)</li>
+                <li><strong>Receive Decision:</strong> Authors notified of acceptance/revision/rejection by May 15</li>
+                <li><strong>Submit Camera-Ready:</strong> Finalize paper and submit by June 15</li>
+            </ol>
+
+            <div class="card">
+                <h4>📥 Submission Portal</h4>
+                <p><strong><a href="#" class="btn">Access Submission Portal</a></strong></p>
+                <p style="margin-top: var(--spacing-md);">Username: Your email | Password: Your password</p>
+            </div>
+        </section>
+
+        <!-- PAPER TEMPLATES -->
+        <section>
+            <h2>Paper Templates & Formatting</h2>
+            <p>Download and use the official templates to ensure your paper meets all formatting requirements:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin: var(--spacing-lg) 0;">
+                <div style="border: 1px solid var(--color-border); padding: var(--spacing-lg); border-radius: var(--border-radius); text-align: center;">
+                    <h4>📄 LaTeX Template</h4>
+                    <p>Professional formatting for technical papers</p>
+                    <a href="#" class="btn">Download LaTeX</a>
+                </div>
+                <div style="border: 1px solid var(--color-border); padding: var(--spacing-lg); border-radius: var(--border-radius); text-align: center;">
+                    <h4>📝 MS Word Template</h4>
+                    <p>Easy-to-use template for Microsoft Word</p>
+                    <a href="#" class="btn">Download Word</a>
+                </div>
+                <div style="border: 1px solid var(--color-border); padding: var(--spacing-lg); border-radius: var(--border-radius); text-align: center;">
+                    <h4>📖 Example Paper</h4>
+                    <p>Reference paper showing correct formatting</p>
+                    <a href="#" class="btn">View Example</a>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-xl);">Formatting Requirements</h3>
+            <ul>
+                <li><strong>Font:</strong> Times New Roman, 12pt</li>
+                <li><strong>Spacing:</strong> Single-spaced</li>
+                <li><strong>Margins:</strong> 1 inch (2.54 cm) on all sides</li>
+                <li><strong>Page Limit:</strong> 8 pages content + 2 pages references</li>
+                <li><strong>Title:</strong> Bold, 14pt, centered</li>
+                <li><strong>Headings:</strong> Numbered sections with hierarchical formatting</li>
+                <li><strong>Figures/Tables:</strong> Include captions, reference in text</li>
+                <li><strong>References:</strong> IEEE or ACM style, alphabetically sorted</li>
+            </ul>
+        </section>
+
+        <!-- REVIEW PROCESS -->
+        <section>
+            <h2>Peer Review Process</h2>
+            
+            <h3>Phase 1: Abstract Screening (2 weeks)</h3>
+            <div class="card">
+                <ul>
+                    <li>Editors review abstracts for scope alignment</li>
+                    <li>Plagiarism check (threshold: 15%)</li>
+                    <li>Quality & relevance assessment</li>
+                    <li>Status: Accepted / Request Revision / Reject</li>
+                </ul>
+            </div>
+
+            <h3>Phase 2: Peer Review (6 weeks)</h3>
+            <div class="card">
+                <ul>
+                    <li>Minimum 2 expert reviewers assigned</li>
+                    <li>Blind review process (double-blind)</li>
+                    <li>Reviewers evaluate: originality, quality, relevance, clarity</li>
+                    <li>Confidential comments provided to authors</li>
+                    <li>Recommendations: Accept / Minor Revision / Major Revision / Reject</li>
+                </ul>
+            </div>
+
+            <h3>Phase 3: Author Revision (Optional)</h3>
+            <div class="card">
+                <ul>
+                    <li>If revisions requested, authors have 3 weeks</li>
+                    <li>Submit revised paper + response letter</li>
+                    <li>Reviewers assess revisions</li>
+                    <li>Final decision: Accept / Reject</li>
+                </ul>
+            </div>
+
+            <h3>Phase 4: Production</h3>
+            <div class="card">
+                <ul>
+                    <li>Accepted papers move to production</li>
+                    <li>Authors submit camera-ready version</li>
+                    <li>Copyediting and formatting final check</li>
+                    <li>Papers published in proceedings</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PUBLICATION DETAILS -->
+        <section>
+            <h2>Publication Information</h2>
+            <ul>
+                <li><strong>Proceedings:</strong> ICAC 2025 Conference Proceedings</li>
+                <li><strong>DOI Assignment:</strong> ✓ Yes (via CrossRef)</li>
+                <li><strong>Indexing:</strong> Google Scholar, DOAJ, Scopus (pending)</li>
+                <li><strong>Access Model:</strong> Open Access</li>
+                <li><strong>Copyright:</strong> Authors retain copyright; papers licensed under CC-BY-4.0</li>
+                <li><strong>Repository:</strong> Papers available on conference website and institutional repositories</li>
+                <li><strong>Publication Fee:</strong> Waived for accepted papers (covered by registration)</li>
+            </ul>
+        </section>
+
+        <!-- SPECIAL NOTES -->
+        <section>
+            <h2>Important Guidelines</h2>
+            
+            <h3>✓ Plagiarism Policy</h3>
+            <div class="card">
+                <p>All papers are scanned for plagiarism using Turnitin. Similarity index must be < 15% (proper citations excluded). Papers with > 25% similarity will be rejected.</p>
+            </div>
+
+            <h3>⚠️ Conflict of Interest</h3>
+            <div class="card">
+                <p>Authors must disclose potential conflicts of interest at submission. Reviewers with conflicts will be recused.</p>
+            </div>
+
+            <h3>✋ Ethical Guidelines</h3>
+            <div class="card">
+                <p>Papers must comply with research ethics standards. Research involving human subjects requires IRB approval. All co-authors must be listed and agree with submission.</p>
+            </div>
+
+            <h3>👥 Co-authored Papers</h3>
+            <div class="card">
+                <p>All co-authors must be listed on submission. Only the corresponding author can make changes post-submission. Include emails and affiliations for all authors.</p>
+            </div>
+
+            <h3>🔄 Double-Blind Review</h3>
+            <div class="card">
+                <p>ICAC 2025 uses double-blind peer review. Ensure author names/affiliations are NOT visible in the manuscript. Use anonymous references (e.g., "Author et al." instead of your name).</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            
+            <h3>Can I submit multiple papers?</h3>
+            <p>Yes, you can submit up to 3 papers per author. However, at most 2 papers per author will be accepted for the conference.</p>
+
+            <h3>What is the plagiarism threshold?</h3>
+            <p>Papers with similarity index 0-15%: Accepted. 15-25%: Manual review. >25%: Likely rejection.</p>
+
+            <h3>Can I submit already-published work?</h3>
+            <p>No, papers must be original and unpublished. Previously published work or simultaneous submissions to other venues are not allowed.</p>
+
+            <h3>What if my paper is rejected?</h3>
+            <p>You receive detailed reviewer feedback. You can address comments and resubmit to next year's conference or a different venue.</p>
+
+            <h3>Is there an open access fee?</h3>
+            <p>No, publication is fully open access. All accepted papers are freely available online. Authors don't pay publication fees.</p>
+
+            <h3>Can I withdraw my paper?</h3>
+            <p>Yes, you can withdraw anytime before final decision is made. Withdrawals after acceptance incur a small administrative fee.</p>
+
+            <h3>How long does the review process take?</h3>
+            <p>Abstract review: 2 weeks. Full paper review: 6 weeks. Revisions: 3 weeks. Total: approximately 11 weeks from submission to decision.</p>
+
+            <h3>Will I get reviewer feedback?</h3>
+            <p>Yes, all authors receive detailed reviewer comments and suggestions for improvement, regardless of acceptance decision.</p>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="submit" style="text-align: center; padding: var(--spacing-3xl); background: var(--color-bg); border-radius: var(--border-radius); margin-bottom: var(--spacing-3xl);">
+            <h2>Ready to Submit Your Paper?</h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-xl);">Join us in advancing the field of advanced computing and communication.</p>
+            <a href="#" class="btn" style="padding: var(--spacing-lg) var(--spacing-2xl); font-size: var(--font-size-lg);">Submit Your Paper Now</a>
+            <p style="margin-top: var(--spacing-lg); color: var(--color-text-light);">Abstract Deadline: January 31, 2025 | Full Paper: March 31, 2025</p>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <footer-content>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Registration.html">Registration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/Important-Date.html">Important Dates</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue & Logistics</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/Privacy.html">Privacy Policy</a></li>
+                    <li><a href="/Terms.html">Terms & Conditions</a></li>
+                    <li><a href="/Contact.html">Contact Us</a></li>
+                    <li><a href="/New.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </footer-content>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Conference on Advanced Computing & Communication. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

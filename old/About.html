@@ -1,0 +1,570 @@
+<!-- CONFERENCE WEBSITE - ABOUT CONFERENCE PAGE (/about-conference) -->
+<!-- Production-Ready Code - Professional & Clean -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ICAC 2025 | International Conference on Advanced Computing & Communication</title>
+    <meta name="description" content="Learn about ICAC 2025 - our mission, history, objectives, and impact on advanced computing research and communication technologies.">
+    <meta name="keywords" content="about conference, ICAC 2025, advanced computing, communication, research, objectives, mission">
+    
+    <style>
+        :root {
+            --color-primary: #0891b2;
+            --color-primary-hover: #0e7490;
+            --color-secondary: #64748b;
+            --color-accent: #f59e0b;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-bg: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-white: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --border-radius: 8px;
+            --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-white);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--color-white);
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-xl);
+        }
+
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary), #06b6d4);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: var(--spacing-md);
+        }
+
+        section h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+        }
+
+        .card {
+            background: var(--color-bg);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--border-radius);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            padding: var(--spacing-xl);
+            text-align: center;
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        ul, ol {
+            margin-left: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        li {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .timeline-item {
+            margin-bottom: var(--spacing-2xl);
+            padding-left: var(--spacing-3xl);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            border: 3px solid var(--color-white);
+            box-shadow: 0 0 0 3px var(--color-primary);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 30px;
+            width: 4px;
+            height: calc(100% + 20px);
+            background: var(--color-border);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .timeline-content {
+            color: var(--color-text-light);
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.05), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+        }
+
+        .objective-card h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-right: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+               footer {
+            background: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-white);
+        }
+        .breadcrumb {
+            padding: var(--spacing-lg) 0;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: var(--spacing-lg);
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">ICAC 2025</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Important-Date.html">Dates</a></li>
+                    <li><a href="/Speakers.html">Speakers</a></li>
+                    <li><a href="/program.html">Programs</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue</a></li>
+                    <li><a href="/Registration.html">Register</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/Contact.html" class="cta-button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>About ICAC 2025</h1>
+        <p>Advancing Computing & Communication Technologies</p>
+    </div>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <strong>About</strong>
+        </div>
+
+        <!-- MISSION & VISION -->
+        <section>
+            <h2>Mission & Vision</h2>
+            
+            <h3>Our Mission</h3>
+            <p>ICAC 2025 is dedicated to bringing together researchers, practitioners, and industry leaders from around the world to share cutting-edge research, innovations, and best practices in advanced computing and communication technologies. We provide a premier platform for knowledge exchange and networking.</p>
+
+            <h3>Our Vision</h3>
+            <p>To foster a global community of computing and communication professionals committed to advancing the field through research, education, and collaborative innovation. We envision a world where technological breakthroughs improve human lives and solve critical global challenges.</p>
+        </section>
+
+        <!-- KEY STATISTICS -->
+        <section>
+            <h2>By The Numbers</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Expected Attendees</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Paper Submissions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Accepted Papers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Keynote Speakers</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFERENCE OBJECTIVES -->
+        <section>
+            <h2>Our Objectives</h2>
+            
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h4>🔬 Knowledge Sharing</h4>
+                    <p>Provide a platform for researchers to present and discuss their latest findings in advanced computing and communication.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>🤝 Networking</h4>
+                    <p>Foster connections between academics, industry professionals, and students to build long-term collaborations.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>💡 Innovation</h4>
+                    <p>Showcase cutting-edge technologies and methodologies that push the boundaries of computing and communication fields.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>📚 Education</h4>
+                    <p>Provide learning opportunities through workshops, tutorials, and mentoring from industry experts.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>🌍 Global Impact</h4>
+                    <p>Address international research challenges and contribute to sustainable development through technology.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>📈 Career Development</h4>
+                    <p>Support career growth for students, researchers, and professionals through mentoring and networking.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTORY -->
+        <section>
+            <h2>Conference History</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2013 - The Beginning</div>
+                    <div class="timeline-content">
+                        ICAC was first established as a regional workshop with 50 participants. It focused on local computing research trends and industry insights.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2015 - First National Conference</div>
+                    <div class="timeline-content">
+                        Expanded to national level with 150 participants and 30 research papers. Included keynote speakers from leading institutions.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2018 - International Recognition</div>
+                    <div class="timeline-content">
+                        Became an international conference with participants from 12 countries, 250+ attendees, and papers indexed in Scopus and Google Scholar.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2020 - Virtual Adaptation</div>
+                    <div class="timeline-content">
+                        Successfully transitioned to hybrid format during global pandemic, reaching 400+ attendees from 25 countries worldwide.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2023 - Record Breaking</div>
+                    <div class="timeline-content">
+                        ICAC 2023 achieved highest attendance with 450 participants, 180 paper submissions, and partnerships with 20 international institutions.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2025 - New Heights</div>
+                    <div class="timeline-content">
+                        ICAC 2025 aims to surpass previous records with expanded research tracks, more keynote speakers, and enhanced networking opportunities.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section>
+            <h2>Research Impact</h2>
+            
+            <div class="card">
+                <h3>Published Papers</h3>
+                <p>Over 300+ research papers have been published through ICAC proceedings since 2013, contributing significantly to academic literature in computing and communication.</p>
+            </div>
+
+            <div class="card">
+                <h3>Industry Adoption</h3>
+                <p>Multiple research outcomes from ICAC have been adopted by leading technology companies, resulting in patents and commercial products.</p>
+            </div>
+
+            <div class="card">
+                <h3>Student Participation</h3>
+                <p>More than 1,000 students have benefited from ICAC through paper presentations, workshops, and networking opportunities with industry experts.</p>
+            </div>
+
+            <div class="card">
+                <h3>International Collaborations</h3>
+                <p>ICAC has fostered over 50 international research collaborations, leading to joint publications and funded research projects.</p>
+            </div>
+        </section>
+
+        <!-- ORGANIZING INSTITUTION -->
+        <section>
+            <h2>Organizing Institution</h2>
+            
+            <h3>Department of Computer Science & Engineering</h3>
+            <p>ICAC 2025 is organized by the Department of Computer Science & Engineering, a leading institution committed to advancing research and education in computing technologies.</p>
+
+            <h3>Our Commitments</h3>
+            <ul>
+                <li>Excellence in research and education</li>
+                <li>Inclusive and diverse conference environment</li>
+                <li>Ethical standards in academic publishing</li>
+                <li>Accessibility for all participants</li>
+                <li>Sustainability and social responsibility</li>
+            </ul>
+        </section>
+
+        <!-- CTA -->
+        <section style="text-align: center; padding: var(--spacing-3xl); background: var(--color-bg); border-radius: var(--border-radius); margin-bottom: var(--spacing-3xl);">
+            <h2>Join Us</h2>
+            <p style="font-size: 1.125rem; margin-bottom: var(--spacing-xl); color: var(--color-text-light);">Be part of this year's premier conference on advanced computing and communication</p>
+            <a href="/call-for-papers" class="btn" style="padding: var(--spacing-lg) var(--spacing-2xl); font-size: 1.125rem;">Submit Your Paper</a>
+            <a href="/registration" class="btn btn-secondary" style="padding: var(--spacing-lg) var(--spacing-2xl); font-size: 1.125rem; background: var(--color-secondary);">Register Now</a>
+        </section>
+    </div>
+
+    <footer>
+        <footer-content>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Registration.html">Registration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/Important-Date.html">Important Dates</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue & Logistics</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/Privacy.html">Privacy Policy</a></li>
+                    <li><a href="/Terms.html">Terms & Conditions</a></li>
+                    <li><a href="/Contact.html">Contact Us</a></li>
+                    <li><a href="/New.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </footer-content>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Conference on Advanced Computing & Communication. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

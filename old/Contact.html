@@ -1,0 +1,667 @@
+<!-- CONFERENCE WEBSITE - ADVANCED CONTACT US PAGE (/contact) -->
+<!-- Production-Ready Code - Professional & Clean -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ICAC 2025 - Get in Touch with Conference Team</title>
+    <meta name="description" content="Contact ICAC 2025 conference organizers. Email, phone, contact form, or office visit. Get answers to your conference questions.">
+    
+    <style>
+        :root {
+            --color-primary: #0891b2;
+            --color-primary-hover: #0e7490;
+            --color-secondary: #64748b;
+            --color-accent: #f59e0b;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-bg: #f8fafc;
+            --color-border: #e2e8f0;
+            --color-white: #ffffff;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-white);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--color-white);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-xl);
+        }
+
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary), #06b6d4);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-primary);
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .contact-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .contact-card h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-card strong {
+            color: var(--color-text);
+        }
+
+        .contact-card a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: var(--color-primary-hover);
+            text-decoration: underline;
+        }
+
+        .form-section {
+            background: var(--color-bg);
+            padding: var(--spacing-2xl);
+            border-radius: 8px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="phone"],
+        input[type="subject"],
+        select,
+        textarea {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="phone"]:focus,
+        input[type="subject"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-right: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--color-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .social-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-lg);
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .social-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-card a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .social-card a:hover {
+            color: var(--color-primary-hover);
+        }
+
+        .office-hours {
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.05), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .office-hours h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hours-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hour-label {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .hour-time {
+            color: var(--color-text-light);
+        }
+
+               footer {
+            background: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-white);
+        }
+        .success-message {
+            background: #d1fae5;
+            border: 1px solid #6ee7b7;
+            color: #065f46;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-lg);
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: var(--spacing-lg);
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .hours-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">ICAC 2025</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Important-Date.html">Dates</a></li>
+                    <li><a href="/Speakers.html">Speakers</a></li>
+                    <li><a href="/program.html">Programs</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue</a></li>
+                    <li><a href="/Registration.html">Register</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/Contact.html" class="cta-button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Contact Us</h1>
+        <p>Get in Touch - We're Here to Help!</p>
+    </div>
+
+    <div class="container">
+        <!-- QUICK CONTACT INFO -->
+        <section>
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📧 Email</h4>
+                    <p><strong>General Inquiries:</strong></p>
+                    <p><a href="mailto:info@icac2025.org">info@icac2025.org</a></p>
+                    
+                    <p style="margin-top: var(--spacing-lg);"><strong>Paper Submissions:</strong></p>
+                    <p><a href="mailto:submissions@icac2025.org">submissions@icac2025.org</a></p>
+                    
+                    <p style="margin-top: var(--spacing-lg);"><strong>Registration:</strong></p>
+                    <p><a href="mailto:register@icac2025.org">register@icac2025.org</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <h4>📞 Phone</h4>
+                    <p><strong>Main Office:</strong></p>
+                    <p><a href="tel:+911112345678">+91-11-1234-5678</a></p>
+                    
+                    <p style="margin-top: var(--spacing-lg);"><strong>Support Hotline:</strong></p>
+                    <p><a href="tel:+911112345679">+91-11-1234-5679</a></p>
+                    
+                    <p style="margin-top: var(--spacing-lg);"><strong>Fax:</strong></p>
+                    <p>+91-11-1234-5680</p>
+                </div>
+
+                <div class="contact-card">
+                    <h4>📍 Office Address</h4>
+                    <p>ICAC 2025 Conference Office<br>
+                    Department of Computer Science<br>
+                    Delhi University<br>
+                    New Delhi, India 110007</p>
+                    
+                    <p style="margin-top: var(--spacing-lg);">
+                        <strong>GPS Coordinates:</strong><br>
+                        28.7041°N, 77.1025°E
+                    </p>
+                </div>
+            </div>
+
+            <div class="office-hours">
+                <h4>🕐 Office Hours</h4>
+                <div class="hours-list">
+                    <div class="hour-item">
+                        <span class="hour-label">Monday - Friday:</span>
+                        <span class="hour-time">9:00 AM - 6:00 PM IST</span>
+                    </div>
+                    <div class="hour-item">
+                        <span class="hour-label">Saturday:</span>
+                        <span class="hour-time">10:00 AM - 3:00 PM IST</span>
+                    </div>
+                    <div class="hour-item">
+                        <span class="hour-label">Sunday:</span>
+                        <span class="hour-time">Closed</span>
+                    </div>
+                    <div class="hour-item">
+                        <span class="hour-label">Public Holidays:</span>
+                        <span class="hour-time">Closed</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section>
+            <h2>Send us a Message</h2>
+            
+            <div class="success-message" id="successMessage">
+                ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
+            </div>
+
+            <div class="form-section">
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="phone" id="phone" name="phone" placeholder="+91-9876-543210">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="institution">Institution/Organization</label>
+                            <input type="text" id="institution" name="institution" placeholder="Your University/Company">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="category">Inquiry Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">-- Select Category --</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="paper">Paper Submission</option>
+                                <option value="registration">Registration</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="sponsorship">Sponsorship</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What is this about?">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+
+                        <div class="form-group full">
+                            <label style="font-weight: normal;">
+                                <input type="checkbox" id="subscribe" name="subscribe">
+                                I would like to receive updates about ICAC 2025
+                            </label>
+                        </div>
+
+                        <div class="form-group full">
+                            <button type="submit" class="btn" style="width: auto;">Send Message</button>
+                            <button type="reset" class="btn btn-secondary" style="width: auto;">Clear Form</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SOCIAL MEDIA -->
+        <section>
+            <h2>Follow Us on Social Media</h2>
+            <div class="social-links">
+                <div class="social-card">
+                    <div class="social-icon">𝕏</div>
+                    <a href="https://twitter.com/ICAC2025" target="_blank">@ICAC2025</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">💼</div>
+                    <a href="https://linkedin.com/company/icac2025" target="_blank">ICAC 2025</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">f</div>
+                    <a href="https://facebook.com/ICAC2025" target="_blank">ICAC 2025</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">📷</div>
+                    <a href="https://instagram.com/icac2025" target="_blank">@ICAC2025</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ CTA -->
+        <section style="text-align: center; padding: var(--spacing-3xl); background: var(--color-bg); border-radius: 8px; margin-bottom: var(--spacing-3xl);">
+            <h2>Frequently Asked Questions?</h2>
+            <p style="font-size: 1.125rem; margin-bottom: var(--spacing-xl); color: var(--color-text-light);">Check our FAQ page for answers to common questions</p>
+            <a href="/faq" class="btn" style="padding: var(--spacing-lg) var(--spacing-2xl); font-size: 1.125rem;">Visit FAQ Page</a>
+        </section>
+    </div>
+
+    <footer>
+        <footer-content>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About.html">About</a></li>
+                    <li><a href="/CallForPapers.html">Call for Papers</a></li>
+                    <li><a href="/Registration.html">Registration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/Important-Date.html">Important Dates</a></li>
+                    <li><a href="/Venue-Logistics.html">Venue & Logistics</a></li>
+                    <li><a href="/Committee-Contact.html">Committee</a></li>
+                    <li><a href="/FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/Privacy.html">Privacy Policy</a></li>
+                    <li><a href="/Terms.html">Terms & Conditions</a></li>
+                    <li><a href="/Contact.html">Contact Us</a></li>
+                    <li><a href="/New.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </footer-content>
+        <div class="footer-bottom">
+            <p>&copy; 2025 International Conference on Advanced Computing & Communication. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(document.getElementById('contactForm'));
+            
+            // In production, you would send this to a backend server
+            // For now, we'll just show a success message
+            console.log('Form submitted:', Object.fromEntries(formData));
+            
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

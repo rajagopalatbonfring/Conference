@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 13% 10%; /* Near-black */
+    --foreground: 210 20% 98%; /* Almost white */
+    --card: 220 13% 13%; /* Slightly lighter than background */
+    --card-foreground: 210 20% 98%;
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 192 89% 45%; /* A brighter Teal for dark bg */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 160 82% 45%; /* A brighter Green */
+    --secondary-foreground: 210 20% 98%;
+    --muted: 220 9% 25%; /* Muted gray for dark theme */
+    --muted-foreground: 210 20% 75%; /* Lighter gray for text */
+    --accent: 38 92% 55%; /* A brighter Orange */
+    --accent-foreground: 220 13% 10%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 9% 25%;
+    --input: 220 9% 25%;
+    --ring: 192 89% 45%;
+    --radius: 0.3rem; /* Sharper corners */
+  }
+
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 210 20% 98%;
+    --card: 220 13% 13%;
+    --card-foreground: 210 20% 98%;
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 192 89% 45%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 160 82% 45%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 220 9% 25%;
+    --muted-foreground: 210 20% 75%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 220 13% 10%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 9% 25%;
+    --input: 220 9% 25%;
+    --ring: 192 89% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+  .prose {
+    --tw-prose-body: theme(colors.foreground / 0.8);
+    --tw-prose-headings: theme(colors.primary.DEFAULT);
+    --tw-prose-lead: theme(colors.foreground / 0.9);
+    --tw-prose-links: theme(colors.primary.DEFAULT);
+    --tw-prose-bold: theme(colors.foreground);
+    --tw-prose-counters: theme(colors.muted.foreground);
+    --tw-prose-bullets: theme(colors.border);
+    --tw-prose-hr: theme(colors.border);
+    --tw-prose-quotes: theme(colors.foreground);
+    --tw-prose-quote-borders: theme(colors.border);
+    --tw-prose-captions: theme(colors.muted.foreground);
+    --tw-prose-code: theme(colors.foreground);
+    --tw-prose-pre-code: theme(colors.foreground);
+    --tw-prose-pre-bg: theme(colors.muted.DEFAULT);
+    --tw-prose-th-borders: theme(colors.border);
+    --tw-prose-td-borders: theme(colors.border);
+  }
+}
