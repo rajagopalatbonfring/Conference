@@ -116,6 +116,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles, ArrowRight, Calendar, Globe, Leaf } from "lucide-react";
+import { usePathname } from "next/navigation";
 // import { Button } from '@/components/ui/button';  // kept commented as in original
 
 const navLinks = [
@@ -134,7 +135,7 @@ const navLinks = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [pathname, setPathname] = useState("/");
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -166,14 +167,20 @@ export default function Header() {
               <span className="text-teal-200 font-medium">Call for Papers Now Open</span>
             </div>
             <div className="flex gap-2">
-              <button className="text-sm group inline-flex items-center gap-2 text-teal-200 font-bold hover:text-teal-100 transition-all">
+              <a 
+               className="text-sm group inline-flex items-center gap-2 text-teal-200 font-bold hover:text-teal-100 transition-all"
+               href="/registration"
+              >
                 Register
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="text-sm group inline-flex items-center gap-2 text-white font-bold hover:text-lime-200 transition-all">
+              </a>
+              <a 
+                className="text-sm group inline-flex items-center gap-2 text-white font-bold hover:text-lime-200 transition-all"
+                href="/submission"
+              >
                 Submit Paper
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -453,48 +453,55 @@ export default function AboutPage() {
               {/* Organization Card */}
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl opacity-20 blur-2xl"></div>
-                <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-emerald-100">
-                  <div className="flex flex-col items-center text-center space-y-8">
-                    {/* Logo */}
-                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center shadow-xl">
-                      <span className="text-3xl font-bold text-white">SF</span>
+                <div className="relative bg-white rounded-3xl p-6 md:p-12 shadow-2xl border border-emerald-100">
+                  <div className="flex flex-col items-left text-left space-y-8">
+                    <div className='flex flex-col sm:flex-row md:items-center gap-6'>
+                      {/* Logo */}
+                      <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center shadow-xl">
+                        <span className="text-3xl font-bold text-white">SF</span>
+                      </div>
+                      
+                      {/* Organization Name */}
+                      <div>
+                        <h3 className="text-3xl font-bold text-slate-900 mb-2">ScientiaForum</h3>
+                        <div className="h-1 w-20 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full"></div>
+                      </div>
                     </div>
+
                     
-                    {/* Organization Name */}
-                    <div>
-                      <h3 className="text-3xl font-bold text-slate-900 mb-2">ScientiaForum</h3>
-                      <div className="h-1 w-20 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
-                    </div>
-                    
-                    {/* Description */}
-                    <p className="text-lg text-slate-700 leading-relaxed max-w-3xl">
-                      ScientiaForum is a professional organization dedicated to advancing scientific knowledge by creating high-quality platforms for academic and industry professionals to connect, share, and collaborate. With years of experience in managing international conferences, we are committed to ensuring ICLEAS 2026 is a resounding success.
-                    </p>
-                    
-                    {/* Contact Info */}
-                    <div className="w-full pt-8 mt-8 border-t border-slate-200">
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-bold text-slate-900">Contact Information</h4>
-                        <div className="flex flex-col items-center gap-3">
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
-                              <Users className="w-5 h-5 text-emerald-600" />
+                    <div className="flex flex-col sm:flex-row">
+                      {/* Description */}
+                      <p className="text-lg text-slate-700 leading-relaxed max-w-3xl pr-8">
+                        ScientiaForum is a professional organization dedicated to advancing scientific knowledge by creating high-quality platforms for academic and industry professionals to connect, share, and collaborate. With years of experience in managing international conferences, we are committed to ensuring ICLEAS 2026 is a resounding success.
+                      </p>
+                      
+                      {/* Contact Info */}
+                      <div className="self-start mt-8 md:mt-0 md:border-l md:pl-8 border-slate-200">
+                        <div className="space-y-4">
+                          <h4 className="text-xl font-bold text-slate-900">Contact Information</h4>
+                          <div className="flex flex-col items-center gap-3">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                                <Users className="w-5 h-5 text-emerald-600" />
+                              </div>
+                              <div className="text-left">
+                                <div className="font-semibold text-slate-900">Conference Secretariat</div>
+                                <div className="text-sm text-slate-600">Main Contact Person</div>
+                              </div>
                             </div>
-                            <div className="text-left">
-                              <div className="font-semibold text-slate-900">Conference Secretariat</div>
-                              <div className="text-sm text-slate-600">Main Contact Person</div>
-                            </div>
+                            <a 
+                              href="mailto:contact@icleas.com" 
+                              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all shadow-lg"
+                            >
+                              <Mail className="w-5 h-5" />
+                              contact@icleas.com
+                            </a>
                           </div>
-                          <a 
-                            href="mailto:contact@icleas.com" 
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all shadow-lg"
-                          >
-                            <Mail className="w-5 h-5" />
-                            contact@icleas.com
-                          </a>
                         </div>
                       </div>
                     </div>
+
+
                   </div>
                 </div>
               </div>
@@ -522,13 +529,19 @@ export default function AboutPage() {
                 Join us at the inaugural ICLEAS 2026 and help shape the future of interdisciplinary science
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <button className="px-10 py-4 bg-white text-emerald-900 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all shadow-2xl inline-flex items-center gap-2">
+                <a 
+                  className="px-10 py-4 bg-white text-emerald-900 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all shadow-2xl inline-flex items-center gap-2"
+                  href="/submission"
+                >
                   Submit Your Paper
                   <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
+                </a>
+                <a 
+                  className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                  href="/registration"
+                >
                   Register Now
-                </button>
+                </a>
               </div>
             </div>
           </div>

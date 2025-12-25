@@ -424,12 +424,18 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <button className="px-8 py-4 bg-white text-emerald-900 rounded-lg font-semibold text-lg hover:bg-emerald-50 transition-all transform hover:scale-105 shadow-2xl">
+              <a  
+                className="px-8 py-4 bg-white text-emerald-900 rounded-lg font-semibold text-lg hover:bg-emerald-50 transition-all transform hover:scale-105 shadow-2xl"
+                href="/submission"
+              >
                 Submit Your Paper
-              </button>
-              <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
+              </a>
+              <a 
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                href="/registration" 
+              >
                 Register Now
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -470,18 +476,26 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: MicVocal, title: "Leading Researchers", desc: "Learn from and interact with experts and pioneers in the field.", color: "from-emerald-500 to-teal-500" },
-              { icon: GitFork, title: "5 Cutting-Edge Tracks", desc: "Explore diverse topics across our specialized scientific tracks.", color: "from-green-600 to-lime-600" },
-              { icon: Globe, title: "Global Networking", desc: "Connect with peers and professionals from around the world online.", color: "from-teal-500 to-cyan-500" },
-              { icon: BookCheck, title: "Indexed Proceedings", desc: "Get your work published in our proceedings with a dedicated ISBN.", color: "from-lime-600 to-green-500" }
+              { icon: MicVocal, title: "Leading Researchers", desc: "Learn from and interact with experts and pioneers in the field.", bgcolor: "from-emerald-500 to-teal-500", href:"/speakers", color:"emerald-400" },
+              { icon: GitFork, title: "5 Cutting-Edge Tracks", desc: "Explore diverse topics across our specialized scientific tracks.", bgcolor: "from-green-600 to-lime-600", href:"/tracks", color:"green-600" },
+              { icon: Globe, title: "Global Networking", desc: "Connect with peers and professionals from around the world online.", bgcolor: "from-teal-500 to-cyan-500", href:"/committee", color:"teal-500" },
+              { icon: BookCheck, title: "Indexed Proceedings", desc: "Get your work published in our proceedings with a dedicated ISBN.", bgcolor: "from-lime-600 to-green-500", href:"/publication", color:"lime-600" }
             ].map((item, idx) => (
-              <div key={idx} className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity`}></div>
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform`}>
-                  <item.icon className="w-8 h-8 text-white" />
+              <div key={idx} className="flex flex-col justify-between group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.bgcolor} opacity-0 group-hover:opacity-5 transition-opacity`}></div>
+                <div>
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${item.bgcolor} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform`}>
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                <a 
+                  href={item.href}
+                  className={`group  inline-flex items-center gap-2 text-${item.color} font-bold text-lg hover:gap-3 transition-all relative z-10`}
+                >
+                  view<ArrowRight className="w-5 h-5" />
+                </a>
               </div>
             ))}
           </div>
@@ -565,10 +579,13 @@ export default function Home() {
 
               {/* CTA Button */}
               <div className="text-center mt-16">
-                <button className="group px-10 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-bold text-lg hover:from-emerald-500 hover:to-teal-500 transition-all shadow-2xl shadow-emerald-600/50 inline-flex items-center gap-3">
+                <a 
+                  className="group px-10 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-bold text-lg hover:from-emerald-500 hover:to-teal-500 transition-all shadow-2xl shadow-emerald-600/50 inline-flex items-center gap-3"
+                  href="/dates"
+                >
                   View Full Timeline
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -645,10 +662,13 @@ export default function Home() {
                       {speaker.bio}
                     </p>
                     
-                    <button className="group inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:gap-3 transition-all">
+                    <a 
+                      className="group inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:gap-3 transition-all"
+                      href="/speakers"
+                    >
                       Read Full Biography
                       <ArrowRight className="w-5 h-5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -656,10 +676,13 @@ export default function Home() {
             
             {/* View All Button */}
             <div className="text-center mt-20">
-              <button className="px-10 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl inline-flex items-center gap-3">
+              <a 
+                className="px-10 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl inline-flex items-center gap-3"
+                href="/speakers"
+              >
                 View All Speakers
                 <ChevronRight className="w-5 h-5" />
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -769,16 +792,19 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">Coming Soon</h3>
                     <p className="text-lg text-slate-600">Exciting updates are on the way. Check back soon!</p>
                   </div>
-                  <button className="px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all">
+                  <a 
+                    className="px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all"
+                    href="/news"
+                  >
                     View All News
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-                {/* Publication Partners - Nature / Sustainability Theme */}
+        {/* Publication Partners - Nature / Sustainability Theme */}
         <section className="bg-gradient-to-br from-emerald-950 via-teal-950 to-green-950 py-24 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
           
@@ -832,7 +858,8 @@ export default function Home() {
                     desc: "Contribute to sustainable solutions in life & environmental sciences.", 
                     cta: "Go to CFP", 
                     gradient: "from-emerald-600 to-teal-600",
-                    bgGradient: "from-emerald-50 to-teal-50"
+                    bgGradient: "from-emerald-50 to-teal-50",
+                    href : "/submission"
                   },
                   { 
                     icon: Users, 
@@ -840,15 +867,17 @@ export default function Home() {
                     desc: "Join scientists working toward a greener and more resilient future.", 
                     cta: "Register Now", 
                     gradient: "from-teal-600 to-cyan-600",
-                    bgGradient: "from-teal-50 to-cyan-50"
+                    bgGradient: "from-teal-50 to-cyan-50",
+                    href : "/registration"
                   },
                   { 
                     icon: Newspaper, 
                     title: "Become a Reviewer", 
                     desc: "Help ensure high-quality research with environmental relevance.", 
-                    cta: "Contact Us", 
+                    cta: "Interested", 
                     gradient: "from-lime-600 to-green-600",
-                    bgGradient: "from-lime-50 to-green-50"
+                    bgGradient: "from-lime-50 to-green-50",
+                    href : "/committee"
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="relative group">
@@ -875,10 +904,13 @@ export default function Home() {
                         </div>
                         
                         {/* CTA */}
-                        <button className={`group/btn w-full px-8 py-4 bg-gradient-to-r ${item.gradient} text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center justify-center gap-2`}>
+                        <a 
+                          className={`group/btn w-full px-8 py-4 bg-gradient-to-r ${item.gradient} text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center justify-center gap-2`}
+                          href={item.href}
+                        >
                           {item.cta}
                           <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -930,10 +962,13 @@ export default function Home() {
               
               {/* View All Button */}
               <div className="text-center mt-12">
-                <button className="px-10 py-4 bg-emerald-700 text-white rounded-full font-bold text-lg hover:bg-emerald-600 transition-all shadow-xl inline-flex items-center gap-3">
+                <a 
+                  className="px-10 py-4 bg-emerald-700 text-white rounded-full font-bold text-lg hover:bg-emerald-600 transition-all shadow-xl inline-flex items-center gap-3"
+                  href="/faq"
+                >
                   View All FAQs
                   <ArrowRight className="w-5 h-5" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -954,12 +989,18 @@ export default function Home() {
                 Join ICLEAS 2026 and contribute to life sciences, environmental protection, and applied innovation
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <button className="px-10 py-4 bg-white text-emerald-900 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all shadow-2xl">
+                <a 
+                  className="px-10 py-4 bg-white text-emerald-900 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all shadow-2xl"
+                  href="/submission"
+                >
                   Submit Your Paper
-                </button>
-                <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
+                </a>
+                <a 
+                  className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                  href="/registration"
+                >
                   Register Now
-                </button>
+                </a>
               </div>
             </div>
           </div>
