@@ -1,102 +1,47 @@
-// import Link from 'next/link';
-// import { ChevronRight } from 'lucide-react';
-// import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-// import { conferenceTracks } from '@/lib/data';
-// import { Badge } from '@/components/ui/badge';
-
-// export default function ConferenceTracksPage() {
-//   return (
-//     <div className="bg-background text-foreground">
-//       {/* 1. Page Header */}
-//       <section className="bg-card/30 py-12">
-//         <div className="container mx-auto">
-//           <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-//             <Link href="/" className="hover:text-primary">Home</Link>
-//             <ChevronRight size={16} />
-//             <span>Conference Tracks</span>
-//           </div>
-//           <h1 className="mt-2 text-4xl font-bold tracking-tight text-primary md:text-5xl">
-//             Conference Tracks
-//           </h1>
-//           <p className="mt-4 text-lg text-muted-foreground">
-//             Explore the diverse range of topics at ICLEAS 2026.
-//           </p>
-//         </div>
-//       </section>
-
-//       <div className="container mx-auto py-16 md:py-24">
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//           {conferenceTracks.map((track) => (
-//             <Card key={track.title} className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
-//               <CardHeader>
-//                 <CardTitle>{track.title}</CardTitle>
-//                 <CardDescription>{track.description}</CardDescription>
-//               </CardHeader>
-//               <CardContent>
-//                 <h4 className="font-semibold mb-2">Keywords:</h4>
-//                 <div className="flex flex-wrap gap-2">
-//                   {track.keywords.map(keyword => (
-//                     <Badge key={keyword} variant="secondary">{keyword}</Badge>
-//                   ))}
-//                 </div>
-//               </CardContent>
-//             </Card>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 import Link from 'next/link';
 import { 
   ChevronRight, Microscope, Droplet, Dna, Zap, 
   Leaf, Fish, Beaker, Cpu, Brain, Globe,
-  Sparkles, ArrowRight, BookOpen, Target
+  Sparkles, ArrowRight, BookOpen, Target, Atom, Rocket,PawPrint
 } from 'lucide-react';
 
 // Mock data - replace with your actual import
-const conferenceTracks = [
-  {
-    title: "Animal Science & Veterinary Studies",
-    description: "Advances in animal health, welfare, breeding, and veterinary medicine for sustainable livestock and pet care.",
-    keywords: ["Animal Genetics", "Veterinary Medicine", "Animal Nutrition", "Livestock Management", "Wildlife Conservation"],
-    icon: Fish,
-    gradient: "from-blue-500 to-cyan-500",
-    bgGradient: "from-blue-50 to-cyan-50"
+const tracks = [
+  { 
+    icon: PawPrint, 
+    title: "Animal Science & Veterinary Studies", 
+    topics: "Veterinary medicine, animal health, livestock management", 
+    keywords: "Disease prevention, animal behavior",
+    color: "from-emerald-500 to-teal-500"
   },
-  {
-    title: "Aquatic Science & Fisheries",
-    description: "Research on marine and freshwater ecosystems, sustainable fisheries, aquaculture, and ocean conservation.",
-    keywords: ["Marine Biology", "Aquaculture", "Ocean Conservation", "Fisheries Management", "Coral Reefs"],
-    icon: Droplet,
-    gradient: "from-cyan-500 to-teal-500",
-    bgGradient: "from-cyan-50 to-teal-50"
+  { 
+    icon: Fish, 
+    title: "Aquatic Science & Fisheries", 
+    topics: "Marine biology, aquaculture, fisheries management", 
+    keywords: "Water ecosystems, sustainable fishing",
+    color: "from-cyan-500 to-blue-500"
   },
-  {
-    title: "Biochemical & Molecular Sciences",
-    description: "Cutting-edge research in biochemistry, molecular biology, genetics, and cellular mechanisms.",
-    keywords: ["Molecular Biology", "Genetics", "Proteomics", "Cell Biology", "Genomics"],
-    icon: Dna,
-    gradient: "from-purple-500 to-pink-500",
-    bgGradient: "from-purple-50 to-pink-50"
+  { 
+    icon: Leaf, 
+    title: "Environmental & Natural Sciences", 
+    topics: "Ecology, conservation, climate change, renewable energy", 
+    keywords: "Sustainability, green technology",
+    color: "from-green-600 to-lime-600"
   },
-  {
-    title: "Applied Science & Emerging Technologies",
-    description: "Integration of AI, biotechnology, nanotechnology, and innovative tools for scientific advancement.",
-    keywords: ["Artificial Intelligence", "Biotechnology", "Nanotechnology", "Data Science", "Innovation"],
-    icon: Cpu,
-    gradient: "from-orange-500 to-amber-500",
-    bgGradient: "from-orange-50 to-amber-50"
+  { 
+    icon: Atom, 
+    title: "Biochemical & Molecular Sciences", 
+    topics: "Molecular biology, genetics, biochemistry", 
+    keywords: "Bioinformatics, cell biology",
+    color: "from-teal-600 to-cyan-600"
   },
-  {
-    title: "Environmental Science & Sustainability",
-    description: "Solutions for climate change, pollution control, renewable energy, and ecosystem preservation.",
-    keywords: ["Climate Change", "Renewable Energy", "Pollution Control", "Ecosystem Management", "Sustainability"],
-    icon: Leaf,
-    gradient: "from-green-500 to-lime-500",
-    bgGradient: "from-green-50 to-lime-50"
-  }
+  { 
+    icon: Rocket, 
+    title: "Applied Science & Emerging Technologies", 
+    topics: "Biotech applications, AI/ML in life sciences", 
+    keywords: "Innovation, industrial applications",
+    color: "from-lime-600 to-emerald-600"
+  },
 ];
 
 const getTrackIcon = (title: string) => {
@@ -201,69 +146,25 @@ export default function ConferenceTracksPage() {
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {conferenceTracks.map((track, idx) => {
-              const Icon = track.icon || Beaker;
-              
-              return (
-                <div 
-                  key={track.title}
-                  className="group"
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                >
-                  <div className="h-full bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all border-2 border-slate-100 hover:border-emerald-300 overflow-hidden">
-                    
-                    {/* Header with Gradient */}
-                    <div className={`relative p-8 bg-gradient-to-br ${track.gradient} overflow-hidden`}>
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
-                      
-                      <div className="relative flex items-start gap-4">
-                        <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg flex-shrink-0">
-                          <Icon className="w-8 h-8 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-white mb-2">
-                            {track.title}
-                          </h3>
-                          <p className="text-white/90 leading-relaxed">
-                            {track.description}
-                          </p>
-                        </div>
+          {/* Clean Track Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {tracks.map((track, idx) => (
+                  <div key={idx} className="group relative">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${track.color} opacity-0 group-hover:opacity-5 rounded-3xl blur-xl transition-opacity`}></div>
+                    <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-transparent h-full">
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${track.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform`}>
+                        <track.icon className="w-8 h-8 text-white" />
                       </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-8">
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
-                        <div className="w-1 h-4 bg-gradient-to-b from-emerald-500 to-teal-500 rounded-full"></div>
-                        Key Topics
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {track.keywords.map((keyword, kidx) => (
-                          <span 
-                            key={keyword}
-                            className={`px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r ${track.gradient} bg-opacity-10 text-slate-700 border-2 border-slate-200 hover:border-current transition-colors`}
-                            style={{ animationDelay: `${(idx * 100) + (kidx * 50)}ms` }}
-                          >
-                            {keyword}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      {/* Action Button */}
-                      <div className="mt-8 pt-6 border-t border-slate-100">
-                        <button className="group/btn inline-flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all">
-                          Submit to This Track
-                          <ArrowRight className="w-5 h-5" />
-                        </button>
+                      <h3 className="text-xl font-bold text-slate-900 mb-3">{track.title}</h3>
+                      <p className="text-slate-600 mb-4 leading-relaxed">{track.topics}</p>
+                      <div className="pt-4 border-t border-slate-100">
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Keywords</h4>
+                        <p className="text-sm text-slate-600">{track.keywords}</p>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                ))}
+              </div>
         </div>
       </section>
 

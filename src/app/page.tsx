@@ -886,7 +886,7 @@ export default function Home() {
                       <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-slate-200 to-transparent"></div>
                     )}
                     
-                    <div className={`h-full p-12 bg-gradient-to-br ${item.bgGradient} hover:shadow-2xl transition-all duration-300`}>
+                    <div className={`h-full p-12 bg-gradient-to-br ${item.bgGradient} shadow-2xl hover:shadow-xl transition-all duration-300`}>
                       <div className="space-y-6">
                         {/* Icon */}
                         <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} shadow-xl`}>
