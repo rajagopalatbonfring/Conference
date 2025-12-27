@@ -149,37 +149,37 @@ export default function Header() {
   return (
     <>
       {/* Top Info Bar - Updated to nature theme */}
-      <div className="bg-gradient-to-r from-emerald-950 via-teal-950 to-green-950 text-white py-2 border-b border-white/10">
+      <div className="bg-gradient-to-r from-gray-900 via-teal-950 to-green-950 text-white py-2 border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-between text-xs md:text-sm gap-2">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <Calendar className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-teal-200">June 25-26, 2026</span>
+                <span className="text-white">June 25-26, 2026</span>
               </div>
               <div className="hidden md:flex items-center gap-2">
                 <Globe className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-teal-200">Online Conference</span>
+                <span className="text-white">Online Conference</span>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-lime-400" />
-              <span className="text-teal-200 font-medium">Call for Papers Now Open</span>
+              <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+              <span className="text-orange-200 font-medium">Call for Papers Now Open</span>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-6">
               <a 
-               className="text-sm group inline-flex items-center gap-2 text-teal-200 font-bold hover:text-teal-100 transition-all"
+               className="text-sm group inline-flex items-center gap-1 text-teal-200 font-bold hover:text-teal-100 transition-all"
                href="/registration"
               >
                 Register
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
-                className="text-sm group inline-flex items-center gap-2 text-white font-bold hover:text-lime-200 transition-all"
+                className="text-sm group inline-flex items-center gap-1 text-white font-bold hover:text-orange-200 transition-all"
                 href="/submission"
               >
                 Submit Paper
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
@@ -194,42 +194,40 @@ export default function Header() {
             : "bg-white"
         }`}
       >
-        {/* Gradient Border - Nature theme */}
-        <div className="h-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-lime-600"></div>
+        {/* Gradient Border  */}
+        <div className="h-1 bg-gradient-to-r from-gray-400 via-black to-gray-400"></div>
         
         <div className="container mx-auto px-4">
           <div className="flex h-24 items-center justify-between">
             {/* Logo Section - More Prominent */}
             <a href="/" className="flex items-center gap-4 group">
               <div className="relative">
-                {/* Animated background glow */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-600 via-teal-600 to-lime-600 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
                 
                 {/* Logo container */}
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-600 via-teal-600 to-lime-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
-                    <Leaf className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-2xl bg-none flex items-center justify-center  transition-all duration-300 group-hover:scale-105">
+                    <Leaf className="w-12 h-12 text-emerald-600" />
                   </div>
                 </div>
               </div>
               
               <div>
-                <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-teal-800 to-green-800 group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-lime-700 transition-all duration-300">
-                  ICLEAS 2026
+                <div className="text-2xl font-black text-transparent bg-clip-text bg-black group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-lime-700 transition-all duration-300">
+                  ICLEAS 20<span className="text-orange-400">26</span>
                 </div>
               </div>
             </a>
 
             {/* Desktop Navigation - Floating Style */}
-            <nav className="hidden lg:flex items-center gap-2 bg-emerald-50 rounded-full px-2 py-2 border border-emerald-100 shadow-inner">
+            <nav className="hidden lg:flex items-center gap-2 bg-orange-50 rounded-full px-2 py-2 border border-orange-100 shadow-inner">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   className={`relative px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
                     pathname === link.href
-                      ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg"
-                      : "text-emerald-800 hover:bg-white hover:text-teal-700 hover:shadow-md"
+                      ? "bg-emerald-600 to-teal-600 text-white shadow-lg"
+                      : "text-gray-800 hover:bg-white hover:text-teal-700 hover:shadow-md"
                   }`}
                 >
                   {link.label}
@@ -271,28 +269,10 @@ export default function Header() {
 
           {/* Menu Panel */}
           <div
-            className={`absolute top-0 right-0 w-full max-w-md h-full bg-white shadow-2xl transition-transform duration-500 ${
+            className={`absolute -top-2 right-0 w-full max-w-md h-full bg-white shadow-2xl transition-transform duration-500 ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            {/* Header */}
-            <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-lime-600 p-6 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Leaf className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-white font-bold text-lg">ICLEAS 2026</div>
-                  <div className="text-white/80 text-xs">Conference Menu</div>
-                </div>
-              </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all"
-              >
-                <X className="h-5 w-5 text-white" />
-              </button>
-            </div>
 
             {/* Menu Items */}
             <nav className="p-4 overflow-y-auto h-[calc(100%-180px)]">
@@ -304,8 +284,8 @@ export default function Header() {
                     onClick={() => setIsOpen(false)}
                     className={`block px-5 py-4 rounded-xl font-semibold transition-all duration-300 ${
                       pathname === link.href
-                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg"
-                        : "bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
+                        ? "bg-emerald-600 t text-white shadow-lg"
+                        : "bg-emerald-50 text-gray-900 hover:bg-emerald-100"
                     }`}
                     style={{
                       animationDelay: `${idx * 50}ms`,
@@ -328,14 +308,14 @@ export default function Header() {
               <a
                 href="/registration"
                 onClick={() => setIsOpen(false)}
-                className="block w-full px-6 py-3.5 border-2 border-emerald-700 text-emerald-700 rounded-xl font-bold text-center hover:bg-emerald-700 hover:text-white transition-all"
+                className="block w-full px-6 py-3.5 border-2 border-emerald-700 text-gray-900 rounded-xl font-bold text-center hover:bg-emerald-700 hover:text-white transition-all"
               >
                 Register Now
               </a>
               <a
                 href="/cfp"  // changed to /cfp to match "Submit Paper" context
                 onClick={() => setIsOpen(false)}
-                className="block w-full px-6 py-3.5 bg-gradient-to-r from-emerald-600 via-teal-600 to-lime-600 text-white rounded-xl font-bold text-center shadow-lg"
+                className="block w-full px-6 py-3.5 bg-white/90 text-orange-400 rounded-xl font-bold text-center shadow-lg"
               >
                 Submit Your Paper
               </a>

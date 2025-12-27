@@ -99,7 +99,7 @@ const importantDates = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-emerald-950 via-teal-950 to-green-950 text-white overflow-hidden">
+    <footer className="relative text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
       
@@ -109,14 +109,14 @@ export default function Footer() {
 
       <div className="relative z-10">
         {/* Newsletter Section */}
-        <div className="border-b border-white/10">
+        <div className="border-b border-white/10 bg-gradient-to-br from-emerald-950 via-teal-950 to-green-950 ">
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <Send className="w-5 h-5 text-emerald-400" />
-                    <span className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">Stay Updated</span>
+                    <Send className="w-6 h-6 text-orange-300" />
+                    <span className="text-sm font-semibold text-orange-300 uppercase tracking-wider">Stay Updated</span>
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold mb-3">Subscribe to Our Newsletter</h3>
                   <p className="text-teal-200">Receive updates on ICLEAS 2026, sustainability research, and environmental science news.</p>
@@ -128,7 +128,7 @@ export default function Footer() {
                       placeholder="Enter your email address"
                       className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent"
                     />
-                    <button className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all shadow-xl flex items-center gap-2 whitespace-nowrap">
+                    <button className="px-8 py-4 bg-orange-400 rounded-xl font-semibold hover:bg-emerald-500 transition-all shadow-xl flex items-center gap-2 whitespace-nowrap">
                       Subscribe
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -147,10 +147,23 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-                    <Leaf className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="text-2xl font-bold">ICLEAS 2026</span>
+                  <a href="/" className="flex items-center gap-4 group">
+                    <div className="relative">
+                      
+                      {/* Logo container */}
+                      <div className="relative">
+                        <div className="w-12 h-12 rounded-2xl bg-none flex items-center justify-center  transition-all duration-300 group-hover:scale-105">
+                          <Leaf className="w-12 h-12 text-emerald-600" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-2xl font-black text-transparent bg-clip-text bg-white group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-lime-700 transition-all duration-300">
+                        ICLEAS 20<span className="text-orange-400">26</span>
+                      </div>
+                    </div>
+                  </a>
                 </div>
                 <p className="text-teal-200 leading-relaxed mb-6">
                   International Conference on Life, Environmental & Applied Sciences

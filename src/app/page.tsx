@@ -328,6 +328,8 @@ import {
   MessageCircle, Mail, Phone, Leaf, Microscope, Droplet
 } from 'lucide-react';
 
+import bg from '../assets/bg1.jpg';
+
 // Mock data
 const speakers = [
   {
@@ -380,7 +382,10 @@ export default function Home() {
         {/* Animated background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(52,211,153,0.2),rgba(255,255,255,0))]"></div>
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
+          <div 
+            className="absolute inset-0 opacity-30"
+            style={{ backgroundImage: `url(${bg.src})`, backgroundRepeat:"no-repeat", backgroundSize:"cover" }}
+          ></div>
         </div>
         
         {/* Floating orbs - Nature colors */}
@@ -397,16 +402,16 @@ export default function Home() {
             
             {/* Main Title */}
             <h1 className="font-bold tracking-tight text-white max-w-5xl mx-auto">
-              <span className="block text-5xl md:text-7xl lg:text-8xl mb-4 bg-gradient-to-r from-white via-emerald-100 to-white bg-clip-text text-transparent">
-                ICLEAS 2026
+              <span className="block text-5xl md:text-7xl lg:text-8xl mb-4 bg-white bg-clip-text text-transparent">
+                ICLEAS 20<span className="text-orange-400">26</span>
               </span>
-              <span className="block text-2xl md:text-3xl lg:text-4xl text-emerald-200 font-light">
+              <span className="block text-2xl md:text-3xl lg:text-4xl text-orange-300 font-light">
                 International Conference on Life, Environmental & Applied Sciences
               </span>
             </h1>
             
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-teal-100 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed">
               Integrating Life Sciences, Environment & Technology for a Sustainable Future
             </p>
             
@@ -592,7 +597,7 @@ export default function Home() {
         </section>
 
         {/* Distinguished Speakers - Magazine Layout */}
-        <section className="bg-white py-24 md:py-32">
+        <section className="bg-orange-50/10 py-24 md:py-32">
           <div className="container mx-auto px-4">
             {/* Section Header */}
             <div className="text-center mb-20">
@@ -616,7 +621,6 @@ export default function Home() {
                   {/* Image Side */}
                   <div className="lg:w-1/2">
                     <div className="relative group">
-                      <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"></div>
                       <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                         <img
                           src={speaker.imgSrc}
