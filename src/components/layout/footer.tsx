@@ -213,7 +213,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {[
                   { label: 'Home', href: '/' },
-                  { label: 'About Conference', href: '/about' },
+                  { label: 'About ScientiaForum', href: '/about-scientiaforum' },
                   { label: 'Call for Papers', href: '/cfp' },
                   { label: 'Speakers', href: '/speakers' },
                   { label: 'Registration', href: '/registration' },
