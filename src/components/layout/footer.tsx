@@ -217,7 +217,8 @@ export default function Footer() {
                   { label: 'Call for Papers', href: '/cfp' },
                   { label: 'Speakers', href: '/speakers' },
                   { label: 'Registration', href: '/registration' },
-                  { label: 'Contact Us', href: '/contact' }
+                  { label: 'Contact Us', href: '/contact' },
+                  { label: 'Blogs', href: '/blog' },
                 ].map((link, idx) => (
                   <li key={idx}>
                     <a 

@@ -342,7 +342,7 @@ export default function Header() {
                 Register Now
               </a>
               <a
-                href="/cfp"  // changed to /cfp to match "Submit Paper" context
+                href="/submission"  // changed to /cfp to match "Submit Paper" context
                 onClick={() => setIsOpen(false)}
                 className="block w-full px-6 py-3.5 bg-white/90 text-orange-400 rounded-xl font-bold text-center shadow-lg"
               >
