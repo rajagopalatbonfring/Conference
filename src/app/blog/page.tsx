@@ -1,141 +1,3 @@
-// 'use client';
-
-// import React, { useState } from 'react';
-// import Link from 'next/link';
-// import Image from 'next/image';
-// import { ChevronRight, Search } from 'lucide-react';
-// import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
-// import { Button } from '@/components/ui/button';
-// import { blogArticles } from '@/lib/data';
-// import { Badge } from '@/components/ui/badge';
-// import { Input } from '@/components/ui/input';
-
-// export default function BlogPage() {
-//   const [searchTerm, setSearchTerm] = useState('');
-//   const featuredArticle = blogArticles[0];
-  
-//   const filteredArticles = blogArticles.slice(1).filter(article =>
-//     article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//     article.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   const categories = [...new Set(blogArticles.map(a => a.category))];
-
-//   return (
-//     <div className="bg-background text-foreground">
-//       {/* Page Header */}
-//       <section className="bg-card/30 py-12">
-//         <div className="container mx-auto">
-//           <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-//             <Link href="/" className="hover:text-primary">Home</Link>
-//             <ChevronRight size={16} />
-//             <span>Blog</span>
-//           </div>
-//           <h1 className="mt-2 text-4xl font-bold tracking-tight text-primary md:text-5xl">
-//             Our Blog
-//           </h1>
-//           <p className="mt-4 text-lg text-muted-foreground">
-//             Insights, articles, and updates from the world of science.
-//           </p>
-//         </div>
-//       </section>
-
-//       <div className="container mx-auto py-16 md:py-24 space-y-20">
-        
-//         {/* Featured Article */}
-//         <section id="featured-article">
-//             <h2 className="text-3xl font-bold text-primary mb-8">Featured Post</h2>
-//             <Link href={`/blog/${featuredArticle.slug}`} className="group block">
-//               <Card className="overflow-hidden bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
-//                 <div className="grid md:grid-cols-2">
-//                   <div className="relative h-80">
-//                       <Image src={featuredArticle.imageSrc} alt={featuredArticle.title} fill style={{objectFit: 'cover'}} data-ai-hint={featuredArticle.imageHint} className="brightness-75"/>
-//                   </div>
-//                   <div className="p-8 flex flex-col justify-center">
-//                       <Badge variant="default" className="w-fit mb-2">{featuredArticle.category}</Badge>
-//                       <CardTitle className="text-2xl group-hover:text-primary transition-colors">{featuredArticle.title}</CardTitle>
-//                       <CardDescription className="mt-2 text-sm">{new Date(featuredArticle.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</CardDescription>
-//                       <p className="mt-4 text-muted-foreground">{featuredArticle.excerpt}</p>
-//                       <p className="mt-4 font-semibold text-primary">Read More →</p>
-//                   </div>
-//                 </div>
-//               </Card>
-//             </Link>
-//         </section>
-
-//         <div className="grid lg:grid-cols-4 gap-12">
-//           <aside className="lg:col-span-1 space-y-8">
-//             <div>
-//               <h3 className="text-xl font-semibold mb-4">Search Articles</h3>
-//               <div className="relative">
-//                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-//                 <Input
-//                   type="search"
-//                   placeholder="Search..."
-//                   className="pl-10"
-//                   value={searchTerm}
-//                   onChange={e => setSearchTerm(e.target.value)}
-//                 />
-//               </div>
-//             </div>
-//             <div>
-//               <h3 className="text-xl font-semibold mb-4">Categories</h3>
-//               <div className="flex flex-wrap gap-2">
-//                 {categories.map(category => (
-//                   <Badge key={category} variant="secondary" className="cursor-pointer hover:bg-primary/20">{category}</Badge>
-//                 ))}
-//               </div>
-//             </div>
-//           </aside>
-
-//           <main className="lg:col-span-3">
-//              <h2 className="text-3xl font-bold text-primary mb-8">All Posts</h2>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//               {filteredArticles.length > 0 ? (
-//                 filteredArticles.map(article => (
-//                   <Link key={article.slug} href={`/blog/${article.slug}`} className="group block">
-//                     <Card className="h-full bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
-//                         <CardHeader>
-//                             <div className="relative h-48 mb-4 rounded-md overflow-hidden">
-//                                 <Image src={article.imageSrc} alt={article.title} fill style={{objectFit: 'cover'}} data-ai-hint={article.imageHint} className="brightness-75"/>
-//                             </div>
-//                             <Badge variant="outline" className="w-fit">{article.category}</Badge>
-//                             <CardTitle className="mt-2 group-hover:text-primary transition-colors">{article.title}</CardTitle>
-//                              <CardDescription>{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</CardDescription>
-//                         </CardHeader>
-//                         <CardContent>
-//                             <p className="text-muted-foreground">{article.excerpt}</p>
-//                         </CardContent>
-//                     </Card>
-//                   </Link>
-//                 ))
-//               ) : (
-//                 <p>No articles found.</p>
-//               )}
-//             </div>
-//              {/* Pagination can be added here */}
-//           </main>
-//         </div>
-
-//         {/* Newsletter Subscription */}
-//         <section id="newsletter" className="bg-card/50 p-8 rounded-md text-center">
-//           <h2 className="text-2xl font-bold text-primary">Subscribe to Our Blog</h2>
-//           <p className="mt-2 text-muted-foreground max-w-lg mx-auto">Get the latest articles and insights delivered straight to your inbox.</p>
-//           <form className="mt-6 flex max-w-md mx-auto">
-//             <Input type="email" placeholder="Enter your email" className="rounded-r-none" />
-//             <Button type="submit" className="rounded-l-none">Subscribe</Button>
-//           </form>
-//         </section>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
 'use client';
 
 import React, { useState } from 'react';
@@ -526,3 +388,237 @@ export default function BlogPage() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import Link from 'next/link';
+// import Image from 'next/image';
+// import { 
+//   ChevronRight, Calendar, User, Clock, ArrowRight, 
+//   Sparkles, Newspaper, BookOpen
+// } from 'lucide-react';
+
+// import { getAllBlogPosts } from '@/lib/strapi';
+
+// export default async function BlogPage() {
+//   let posts = [];
+
+//   try {
+//     posts = await getAllBlogPosts() || [];
+//     console.log('Fetched posts from Strapi:', posts.length, posts);
+//   } catch (error) {
+//     console.error('Error fetching blog posts:', error);
+//   }
+
+//   if (!Array.isArray(posts) || posts.length === 0) {
+//     return (
+//       <div className="min-h-screen bg-white flex items-center justify-center py-32">
+//         <div className="text-center">
+//           <BookOpen className="w-24 h-24 text-slate-300 mx-auto mb-8" />
+//           <h2 className="text-4xl font-bold text-slate-900 mb-4">No articles yet</h2>
+//           <p className="text-xl text-slate-600 max-w-md mx-auto">
+//             Add and publish at least one blog post in Strapi admin.
+//           </p>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   // Strapi v5: fields are directly on the post object (no .attributes)
+//   const featured = posts[0];
+//   const recent = posts.slice(1);
+
+//   return (
+//     <div className="min-h-screen bg-white">
+      
+//       {/* Hero Section */}
+//       <section className="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-green-950 py-24 md:py-32 overflow-hidden">
+//         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
+//         <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
+//         <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"></div>
+        
+//         <div className="relative z-10 container mx-auto px-4">
+//           <div className="flex items-center gap-2 text-emerald-200 mb-8">
+//             <Link href="/" className="hover:text-white transition-colors">Home</Link>
+//             <ChevronRight className="w-4 h-4" />
+//             <span className="text-white font-semibold">Blog</span>
+//           </div>
+          
+//           <div className="max-w-4xl">
+//             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+//               <Newspaper className="w-4 h-4 text-emerald-400" />
+//               <span className="text-sm text-white font-medium">Insights & Updates</span>
+//             </div>
+            
+//             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+//               Our Blog
+//             </h1>
+//             <p className="text-xl md:text-2xl text-teal-100 leading-relaxed">
+//               Insights, articles, and updates from the world of life sciences, environmental research, and applied technologies.
+//             </p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Featured Article */}
+//       <section className="relative -mt-32 z-20">
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-6xl mx-auto">
+//             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full mb-6 shadow-xl">
+//               <Sparkles className="w-4 h-4" />
+//               <span className="text-sm font-bold">Featured Post</span>
+//             </div>
+            
+//             <Link href={`/blog/${featured.slug}`} className="group block">
+//               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-slate-100 hover:border-emerald-300 transition-all">
+//                 <div className="grid md:grid-cols-2">
+//                   <div className="relative h-80 md:h-full overflow-hidden">
+//                     {featured.image?.url ? (
+//                       <Image 
+//                         src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${featured.image.url}`}
+//                         alt={featured.image.alternativeText || featured.title || 'Featured post'}
+//                         fill
+//                         className="object-cover transform group-hover:scale-110 transition-transform duration-700"
+//                       />
+//                     ) : (
+//                       <div className="w-full h-full bg-gradient-to-br from-emerald-500 to-teal-500" />
+//                     )}
+//                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+//                   </div>
+//                   <div className="p-8 md:p-12 flex flex-col justify-center">
+//                     <span className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold rounded-full mb-4 w-fit">
+//                       {featured.category || 'General'}
+//                     </span>
+//                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors">
+//                       {featured.title}
+//                     </h2>
+//                     <div className="flex items-center gap-4 text-sm text-slate-600 mb-6">
+//                       <div className="flex items-center gap-2">
+//                         <Calendar className="w-4 h-4" />
+//                         <span>
+//                           {new Date(featured.publishedAt || featured.publishedat || featured.createdAt).toLocaleDateString('en-US', {
+//                             year: 'numeric', month: 'long', day: 'numeric'
+//                           })}
+//                         </span>
+//                       </div>
+//                       <div className="flex items-center gap-2">
+//                         <User className="w-4 h-4" />
+//                         <span>{featured.author || 'Team'}</span>
+//                       </div>
+//                     </div>
+//                     <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+//                       {featured.excerpt || 'Read the full article...'}
+//                     </p>
+//                     <div className="inline-flex items-center gap-2 text-emerald-600 font-bold text-lg group-hover:gap-3 transition-all">
+//                       Read Full Article
+//                       <ArrowRight className="w-5 h-5" />
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </Link>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Recent Articles Grid */}
+//       <section className="container mx-auto px-4 py-20 md:py-32">
+//         <div className="mb-12">
+//           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+//             Recent Articles
+//           </h2>
+//           <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full"></div>
+//         </div>
+
+//         {recent.length > 0 ? (
+//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//             {recent.map((post, index) => {
+//               const image = post.image;
+
+//               return (
+//                 <Link 
+//                   key={post.id || index} 
+//                   href={`/blog/${post.slug}`} 
+//                   className="group block"
+//                 >
+//                   <div className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-slate-100 hover:border-emerald-300 overflow-hidden">
+//                     <div className="relative h-48 overflow-hidden">
+//                       {image?.url ? (
+//                         <Image 
+//                           src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+//                           alt={image.alternativeText || post.title}
+//                           fill
+//                           className="object-cover transform group-hover:scale-110 transition-transform duration-500"
+//                         />
+//                       ) : (
+//                         <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300" />
+//                       )}
+//                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+//                       <div className="absolute top-4 left-4">
+//                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold rounded-full">
+//                           {post.category || 'Article'}
+//                         </span>
+//                       </div>
+//                     </div>
+//                     <div className="p-6">
+//                       <div className="flex items-center gap-4 text-xs text-slate-600 mb-3">
+//                         <div className="flex items-center gap-1">
+//                           <Calendar className="w-3 h-3" />
+//                           <span>
+//                             {new Date(post.publishedAt || post.publishedat || post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+//                           </span>
+//                         </div>
+//                         <div className="flex items-center gap-1">
+//                           <Clock className="w-3 h-3" />
+//                           <span>5 min read</span>
+//                         </div>
+//                       </div>
+//                       <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors line-clamp-2">
+//                         {post.title}
+//                       </h3>
+//                       <p className="text-slate-600 mb-4 line-clamp-3">
+//                         {post.excerpt || 'Read more...'}
+//                       </p>
+//                       <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+//                         <div className="flex items-center gap-2 text-sm text-slate-600">
+//                           <User className="w-4 h-4" />
+//                           <span className="font-medium">{post.author || 'Team'}</span>
+//                         </div>
+//                         <div className="inline-flex items-center gap-1 text-emerald-600 font-semibold text-sm group-hover:gap-2 transition-all">
+//                           Read
+//                           <ArrowRight className="w-4 h-4" />
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </Link>
+//               );
+//             })}
+//           </div>
+//         ) : (
+//           <div className="text-center py-20 bg-slate-50 rounded-2xl">
+//             <p className="text-xl text-slate-600">No recent articles yet</p>
+//           </div>
+//         )}
+//       </section>
+
+//       {/* Newsletter + CTA – keep your original */}
+//       {/* ... */}
+//     </div>
+//   );
+// }

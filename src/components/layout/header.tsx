@@ -123,12 +123,12 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/cfp", label: "Call for Papers" },
-  { href: "/dates", label: "Important Dates" },
+  { href: "/tracks", label: "Conference Tracks" },
   { href: "/speakers", label: "Speakers" },
-  { href: "/program", label: "Program" },
+  // { href: "/program", label: "Program" },
   // { href: "/registration", label: "Registration" },
   { href: "/committee", label: "Committee" },
-  { href: "/blog", label: "Blog" },
+  { href: "/publication", label: "Publication" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -257,7 +257,7 @@ export default function Header() {
           className={`lg:hidden fixed inset-0 z-50 transition-all duration-500 ${
             isOpen ? "pointer-events-auto" : "pointer-events-none"
           }`}
-          style={{ top: '153px' }}
+          style={{ top: '0' }}
         >
           {/* Backdrop */}
           <div
@@ -273,9 +273,38 @@ export default function Header() {
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
+            <div className="flex items-center justify-between">
+              <a href="/" className="flex items-center gap-4 group p-8">
+                <div className="relative">
+                  
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-2xl bg-none flex items-center justify-center  transition-all duration-300 group-hover:scale-105">
+                      <Leaf className="w-12 h-12 text-emerald-600" />
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="text-2xl font-black text-transparent bg-clip-text bg-black group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-lime-700 transition-all duration-300">
+                    ICLEAS 20<span className="text-orange-400">26</span>
+                  </div>
+                </div>
+              </a>
+
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden relative w-12 h-12 rounded-xl bg-none flex items-center justify-center"
+                aria-label="Toggle menu"
+              >
+                <div className="relative transition-all">
+                    <X className="h-6 w-6 text-gray-500 hover:text-red-600" />
+                </div>
+              </button>
+            </div>
+
 
             {/* Menu Items */}
-            <nav className="p-4 overflow-y-auto h-[calc(100%-180px)]">
+            <nav className="p-4 pt-0 overflow-y-auto h-[calc(100%-180px)]">
               <div className="space-y-2">
                 {navLinks.map((link, idx) => (
                   <a

@@ -122,7 +122,7 @@ export default function Footer() {
                   <p className="text-teal-200">Receive updates on ICLEAS 2026, sustainability research, and environmental science news.</p>
                 </div>
                 <div>
-                  <div className="flex gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <input 
                       type="email" 
                       placeholder="Enter your email address"

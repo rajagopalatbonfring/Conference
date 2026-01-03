@@ -1,92 +1,3 @@
-// import { notFound } from 'next/navigation';
-// import Link from 'next/link';
-// import Image from 'next/image';
-// import { Button } from '@/components/ui/button';
-// import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
-// import { blogArticles } from '@/lib/data';
-// import { Badge } from '@/components/ui/badge';
-// import { Card, CardContent } from '@/components/ui/card';
-
-// export async function generateStaticParams() {
-//   return blogArticles.map((article) => ({
-//     slug: article.slug,
-//   }))
-// }
-
-// export default function BlogArticlePage({ params }: { params: { slug: string } }) {
-//   const article = blogArticles.find(a => a.slug === params.slug);
-
-//   if (!article) {
-//     notFound();
-//   }
-  
-//   const relatedArticles = blogArticles.filter(a => a.slug !== article.slug && a.category === article.category).slice(0, 3);
-
-//   return (
-//     <div className="bg-background text-foreground">
-//       <div className="container mx-auto py-16 md:py-24">
-//         <div className="max-w-4xl mx-auto">
-//             <Link href="/blog" className="inline-flex items-center text-sm text-primary hover:underline mb-8">
-//                 <ArrowLeft className="mr-2 h-4 w-4" />
-//                 Back to Blog
-//             </Link>
-
-//             <article>
-//                 <header>
-//                     <div className="relative h-96 w-full rounded-md overflow-hidden mb-8">
-//                         <Image src={article.imageSrc} alt={article.title} fill style={{objectFit: 'cover'}} data-ai-hint={article.imageHint} priority className="brightness-75"/>
-//                     </div>
-//                     <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
-//                         <div className="flex items-center gap-2"><Tag className="h-4 w-4" /><Badge variant="default">{article.category}</Badge></div>
-//                         <div className="flex items-center gap-2"><Calendar className="h-4 w-4" /> <span>{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span></div>
-//                         <div className="flex items-center gap-2"><User className="h-4 w-4" /> <span>{article.author}</span></div>
-//                     </div>
-//                     <h1 className="text-4xl font-bold text-primary mt-2">{article.title}</h1>
-//                 </header>
-
-//                 <div 
-//                   className="prose max-w-none mt-8"
-//                   dangerouslySetInnerHTML={{ __html: article.content }}
-//                 />
-//             </article>
-
-//             {/* Related Articles */}
-//             {relatedArticles.length > 0 && (
-//                  <aside className="mt-24">
-//                     <h2 className="text-3xl font-bold text-primary mb-8">Related Articles</h2>
-//                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//                         {relatedArticles.map(related => (
-//                             <Link key={related.slug} href={`/blog/${related.slug}`} className="group block">
-//                                 <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
-//                                     <CardContent className="p-4">
-//                                         <div className="relative h-40 mb-4 rounded-md overflow-hidden">
-//                                             <Image src={related.imageSrc} alt={related.title} fill style={{objectFit: 'cover'}} data-ai-hint={related.imageHint} className="brightness-75"/>
-//                                         </div>
-//                                         <Badge variant="secondary">{related.category}</Badge>
-//                                         <h3 className="mt-2 font-semibold text-lg group-hover:text-primary transition-colors">{related.title}</h3>
-//                                     </CardContent>
-//                                 </Card>
-//                             </Link>
-//                         ))}
-//                     </div>
-//                 </aside>
-//             )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -419,3 +330,220 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { notFound } from 'next/navigation';
+// import Link from 'next/link';
+// import Image from 'next/image';
+// import { ArrowLeft, Calendar, User, Clock, ChevronRight, BookOpen ,Mail,Linkedin,Facebook,Twitter} from 'lucide-react';
+
+// import { getBlogPostBySlug } from '@/lib/strapi';
+
+// export async function generateMetadata({ params }: { params: { slug: string } }) {
+//   try {
+//     const post = await getBlogPostBySlug(params.slug);
+//     if (!post) return { title: 'Article not found' };
+
+//     return {
+//       title: post.title || 'Blog Article',
+//       description: post.excerpt || 'Conference blog post',
+//     };
+//   } catch (err) {
+//     console.error('Metadata error:', err);
+//     return { title: 'Article not found' };
+//   }
+// }
+
+// export default async function BlogArticlePage({ params }: { params: { slug: string } }) {
+//   let post = null;
+
+  
+
+//   try {
+//     post = await getBlogPostBySlug(params.slug);
+//       console.log('Trying to fetch slug:', params.slug);
+//   console.log('Single post result:', post);
+//   } catch (err) {
+//     console.error('Single post fetch error:', err);
+//   }
+
+//   if (!post) {
+//     notFound();
+//   }
+
+//   // Strapi v5 flat structure
+//   const image = post.image;
+  
+
+//   return (
+//     <div className="min-h-screen bg-white">
+      
+//       {/* Hero Section */}
+//       <section className="relative h-[70vh] overflow-hidden">
+//         {image?.url ? (
+//           <Image 
+//             src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+//             alt={image.alternativeText || post.title || 'Blog article'}
+//             fill
+//             className="object-cover brightness-50"
+//             priority
+//             sizes="(max-width: 768px) 100vw, 80vw"
+//           />
+//         ) : (
+//           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 to-teal-900" />
+//         )}
+        
+//         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
+        
+//         <div className="absolute inset-0 flex items-end">
+//           <div className="container mx-auto px-4 pb-16">
+//             <div className="max-w-4xl">
+//               <div className="flex items-center gap-2 text-white/80 mb-6">
+//                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
+//                 <ChevronRight className="w-4 h-4" />
+//                 <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+//                 <ChevronRight className="w-4 h-4" />
+//                 <span className="text-white font-semibold">{post.category || 'Article'}</span>
+//               </div>
+
+//               <span className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold rounded-full mb-6">
+//                 {post.category || 'General'}
+//               </span>
+
+//               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+//                 {post.title}
+//               </h1>
+
+//               <div className="flex flex-wrap items-center gap-6 text-white/90">
+//                 <div className="flex items-center gap-2">
+//                   <User className="w-5 h-5" />
+//                   <span className="font-medium">{post.author || 'Conference Team'}</span>
+//                 </div>
+//                 <div className="flex items-center gap-2">
+//                   <Calendar className="w-5 h-5" />
+//                   <span>
+//                     {new Date(post.publishedAt || post.publishedat || post.createdAt).toLocaleDateString('en-US', { 
+//                       year: 'numeric', month: 'long', day: 'numeric' 
+//                     })}
+//                   </span>
+//                 </div>
+//                 <div className="flex items-center gap-2">
+//                   <Clock className="w-5 h-5" />
+//                   <span>8 min read</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Article Content */}
+//       <article className="container mx-auto px-4 py-16 md:py-24">
+//         <div className="max-w-4xl mx-auto">
+          
+//           <Link 
+//             href="/blog" 
+//             className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold mb-12 group"
+//           >
+//             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+//             Back to Blog
+//           </Link>
+
+//           {post.excerpt && (
+//             <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 mb-12 border-2 border-emerald-100">
+//               <p className="text-xl text-slate-700 leading-relaxed font-medium">
+//                 {post.excerpt}
+//               </p>
+//             </div>
+//           )}
+
+//           <div className="flex items-center gap-4 mb-12 pb-8 border-b-2 border-slate-200">
+//             <span className="text-sm font-bold text-slate-600 uppercase tracking-wider">
+//               Share this article:
+//             </span>
+//             <div className="flex gap-2">
+//               <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors group">
+//                 <Twitter className="w-5 h-5 text-slate-600 group-hover:text-emerald-600" />
+//               </button>
+//               <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors group">
+//                 <Facebook className="w-5 h-5 text-slate-600 group-hover:text-emerald-600" />
+//               </button>
+//               <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors group">
+//                 <Linkedin className="w-5 h-5 text-slate-600 group-hover:text-emerald-600" />
+//               </button>
+//               <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors group">
+//                 <Mail className="w-5 h-5 text-slate-600 group-hover:text-emerald-600" />
+//               </button>
+//             </div>
+//           </div>
+
+//           {/* Article Body */}
+//           <div 
+//             className="prose prose-lg max-w-none
+//               prose-headings:text-slate-900 prose-headings:font-bold
+//               prose-p:text-slate-700 prose-p:leading-relaxed
+//               prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:text-emerald-700
+//               prose-strong:text-slate-900 prose-strong:font-bold
+//               prose-ul:text-slate-700 prose-ol:text-slate-700
+//               prose-blockquote:border-l-4 prose-blockquote:border-emerald-500 prose-blockquote:bg-emerald-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-xl
+//               prose-code:text-emerald-600 prose-code:bg-emerald-50 prose-code:px-2 prose-code:py-1 prose-code:rounded
+//               prose-img:rounded-2xl prose-img:shadow-xl"
+//             dangerouslySetInnerHTML={{ __html: post.content || '<p>No content available yet.</p>' }}
+//           />
+
+//           {/* Author Bio */}
+//           <div className="mt-16 pt-12 border-t-2 border-slate-200">
+//             <div className="flex items-start gap-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border-2 border-emerald-100">
+//               <div className="flex-shrink-0">
+//                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
+//                   {(post.author || 'A')[0]}
+//                 </div>
+//               </div>
+//               <div>
+//                 <h3 className="text-2xl font-bold text-slate-900 mb-2">
+//                   {post.author || 'Conference Team'}
+//                 </h3>
+//                 <p className="text-slate-600 mb-4">
+//                   Leading researcher in {post.category?.toLowerCase() || 'science'} with extensive experience in sustainable development and environmental conservation.
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </article>
+
+//       {/* Final CTA */}
+//       <section className="relative bg-gradient-to-br from-emerald-900 via-teal-900 to-green-900 py-20 overflow-hidden">
+//         {/* ... your CTA ... */}
+//       </section>
+//     </div>
+//   );
+// }

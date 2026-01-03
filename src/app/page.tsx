@@ -483,12 +483,12 @@ export default function Home() {
             {[
               { icon: MicVocal, title: "Leading Researchers", desc: "Learn from and interact with experts and pioneers in the field.", bgcolor: "from-emerald-500 to-teal-500", href:"/speakers", color:"emerald-400" },
               { icon: GitFork, title: "5 Cutting-Edge Tracks", desc: "Explore diverse topics across our specialized scientific tracks.", bgcolor: "from-green-600 to-lime-600", href:"/tracks", color:"green-600" },
-              { icon: Globe, title: "Global Networking", desc: "Connect with peers and professionals from around the world online.", bgcolor: "from-teal-500 to-cyan-500", href:"/committee", color:"teal-500" },
+              { icon: Globe, title: "Global Networking", desc: "Connect with peers and professionals from around the world online.", bgcolor: "from-orange-400 to-orange-300", href:"/committee", color:"orange-400" },
               { icon: BookCheck, title: "Indexed Proceedings", desc: "Get your work published in our proceedings with a dedicated ISBN.", bgcolor: "from-lime-600 to-green-500", href:"/publication", color:"lime-600" }
             ].map((item, idx) => (
-              <div key={idx} className="flex flex-col justify-between group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
+              <div key={idx} className="text-center flex flex-col justify-between group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:border-transparent overflow-hidden">
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.bgcolor} opacity-0 group-hover:opacity-5 transition-opacity`}></div>
-                <div>
+                <div className='flex flex-col items-center'>
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${item.bgcolor} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform`}>
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
@@ -497,9 +497,9 @@ export default function Home() {
                 </div>
                 <a 
                   href={item.href}
-                  className={`group  inline-flex items-center gap-2 text-${item.color} font-bold text-lg hover:gap-3 transition-all relative z-10`}
+                  className={`group text-${item.color} font-bold text-lg hover:gap-3 transition-all relative z-10 hover:underline`}
                 >
-                  view<ArrowRight className="w-5 h-5" />
+                  view
                 </a>
               </div>
             ))}
