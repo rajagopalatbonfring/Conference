@@ -71,119 +71,497 @@
 
 
 
+// import Link from 'next/link';
+// import Image from 'next/image';
+// import { 
+//   ChevronRight, Users, Award, Shield, Star, 
+//   Globe, Sparkles, Mail, Linkedin 
+// } from 'lucide-react';
+
+// // Mock data - replace with your actual import
+// const committees = [
+//   {
+//     title: "Organizing Committee",
+//     members: [
+//       { 
+//         name: "Dr. Sarah Mitchell", 
+//         title: "Conference Chair", 
+//         affiliation: "Stanford University",
+//         imgSrc: "https://picsum.photos/seed/chair1/400/400",
+//         imgHint: "professional scientist"
+//       },
+//       { 
+//         name: "Dr. James Chen", 
+//         title: "Program Chair", 
+//         affiliation: "MIT",
+//         imgSrc: "https://picsum.photos/seed/chair2/400/400",
+//         imgHint: "scientist portrait"
+//       },
+//       { 
+//         name: "Prof. Maria Rodriguez", 
+//         title: "Publication Chair", 
+//         affiliation: "Oxford University",
+//         imgSrc: "https://picsum.photos/seed/chair3/400/400",
+//         imgHint: "academic portrait"
+//       },
+//       { 
+//         name: "Dr. Kenji Tanaka", 
+//         title: "Technical Chair", 
+//         affiliation: "University of Tokyo",
+//         imgSrc: "https://picsum.photos/seed/chair4/400/400",
+//         imgHint: "professor portrait"
+//       }
+//     ]
+//   },
+//   {
+//     title: "Program Committee",
+//     members: [
+//       { 
+//         name: "Dr. Emily White", 
+//         title: "Track Chair - Life Sciences", 
+//         affiliation: "Harvard Medical School",
+//         imgSrc: "https://picsum.photos/seed/prog1/400/400",
+//         imgHint: "researcher portrait"
+//       },
+//       { 
+//         name: "Prof. Ahmed Hassan", 
+//         title: "Track Chair - Environmental Science", 
+//         affiliation: "Cairo University",
+//         imgSrc: "https://picsum.photos/seed/prog2/400/400",
+//         imgHint: "professor"
+//       },
+//       { 
+//         name: "Dr. Lisa Anderson", 
+//         title: "Track Chair - Applied Technologies", 
+//         affiliation: "ETH Zurich",
+//         imgSrc: "https://picsum.photos/seed/prog3/400/400",
+//         imgHint: "scientist"
+//       },
+//       { 
+//         name: "Dr. Raj Kumar", 
+//         title: "Track Chair - Molecular Sciences", 
+//         affiliation: "IIT Delhi",
+//         imgSrc: "https://picsum.photos/seed/prog4/400/400",
+//         imgHint: "academic"
+//       }
+//     ]
+//   },
+//   {
+//     title: "Advisory Board",
+//     members: [
+//       { 
+//         name: "Prof. Robert Williams", 
+//         title: "Senior Advisor", 
+//         affiliation: "Cambridge University",
+//         imgSrc: "https://picsum.photos/seed/adv1/400/400",
+//         imgHint: "senior professor"
+//       },
+//       { 
+//         name: "Dr. Sophie Martin", 
+//         title: "Research Advisor", 
+//         affiliation: "CNRS France",
+//         imgSrc: "https://picsum.photos/seed/adv2/400/400",
+//         imgHint: "researcher"
+//       }
+//     ]
+//   }
+// ];
+
+// const getCommitteeIcon = (title: string) => {
+//   if (title.includes("Organizing")) return Users;
+//   if (title.includes("Program")) return Award;
+//   if (title.includes("Advisory")) return Shield;
+//   return Star;
+// };
+
+// const getCommitteeGradient = (title: string) => {
+//   if (title.includes("Organizing")) return "from-emerald-500 to-teal-500";
+//   if (title.includes("Program")) return "from-teal-500 to-cyan-500";
+//   if (title.includes("Advisory")) return "from-purple-500 to-pink-500";
+//   return "from-lime-500 to-green-500";
+// };
+
+// export default function CommitteePage() {
+//   return (
+//     <div className="min-h-screen bg-white">
+      
+//       {/* Hero Section */}
+//       <section className="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-green-950 py-24 md:py-32 overflow-hidden">
+//         {/* Background Pattern */}
+//         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
+//         <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
+//         <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"></div>
+        
+//         <div className="relative z-10 container mx-auto px-4">
+//           {/* Breadcrumb */}
+//           <div className="flex items-center gap-2 text-emerald-200 mb-8">
+//             <Link href="/" className="hover:text-white cursor-pointer transition-colors">
+//               Home
+//             </Link>
+//             <ChevronRight className="w-4 h-4" />
+//             <span className="text-white font-semibold">Committees</span>
+//           </div>
+          
+//           <div className="max-w-4xl">
+//             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+//               <Users className="w-4 h-4 text-emerald-400" />
+//               <span className="text-sm text-white font-medium">Leadership & Excellence</span>
+//             </div>
+            
+//             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+//               Conference Committee
+//             </h1>
+//             <p className="text-xl md:text-2xl text-teal-100 leading-relaxed">
+//               Meet the distinguished experts and leaders guiding ICLEAS 2026 toward scientific excellence and innovation.
+//             </p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Introduction Section */}
+//       <section className="relative -mt-16 z-20">
+//         <div className="container mx-auto px-4">
+//           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-emerald-100">
+//             <div className="max-w-4xl mx-auto text-center">
+//               <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-6">
+//                 <Sparkles className="w-5 h-5 text-emerald-600" />
+//                 <span className="text-sm font-bold text-emerald-900">World-Class Leadership</span>
+//               </div>
+//               <p className="text-lg text-slate-700 leading-relaxed">
+//                 Our conference is organized by a diverse team of internationally recognized researchers, 
+//                 academics, and industry leaders committed to advancing life sciences, environmental 
+//                 sustainability, and applied technologies for a better future.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Committee Sections */}
+//       <div className="container mx-auto px-4 py-20 md:py-32 space-y-32">
+//         {committees.map((committee, idx) => {
+//           const Icon = getCommitteeIcon(committee.title);
+//           const gradient = getCommitteeGradient(committee.title);
+          
+//           return (
+//             <section 
+//               key={committee.title} 
+//               id={committee.title.toLowerCase().replace(/ /g, '-')}
+//               className="scroll-mt-20"
+//             >
+//               {/* Section Header */}
+//               <div className="text-center mb-16">
+//                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 mb-6 shadow-xl">
+//                   <Icon className="w-10 h-10 text-white" />
+//                 </div>
+//                 <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+//                   {committee.title}
+//                 </h2>
+//                 <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
+//               </div>
+
+//               {/* Members Grid */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+//                 {committee.members.map((member, memberIdx) => (
+//                   <div 
+//                     key={member.name}
+//                     className="group"
+//                     style={{ animationDelay: `${memberIdx * 100}ms` }}
+//                   >
+//                     <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-slate-100 hover:border-emerald-300">
+//                       {/* Card Background Gradient */}
+//                       <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity`}></div>
+                      
+//                       <div className="relative p-6">
+//                         {/* Image */}
+//                         {member.imgSrc && (
+//                           <div className="relative mb-6">
+//                             <div className="absolute -inset-1 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity blur-lg"></div>
+//                             <div className="relative h-32 w-32 rounded-full overflow-hidden mx-auto ring-4 ring-white shadow-xl">
+//                               <Image 
+//                                 src={member.imgSrc} 
+//                                 alt={`Photo of ${member.name}`} 
+//                                 fill 
+//                                 style={{objectFit: 'cover'}} 
+//                                 data-ai-hint={member.imgHint || 'person portrait'} 
+//                                 className="transform group-hover:scale-110 transition-transform duration-500"
+//                               />
+//                             </div>
+//                           </div>
+//                         )}
+                        
+//                         {/* Content */}
+//                         <div className="text-center space-y-3">
+//                           <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+//                             {member.name}
+//                           </h3>
+                          
+//                           {member.title && (
+//                             <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${gradient} text-white text-sm font-semibold shadow-md`}>
+//                               {member.title}
+//                             </div>
+//                           )}
+                          
+//                           {member.affiliation && (
+//                             <>
+//                               <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-4"></div>
+//                               <div className="flex items-center justify-center gap-2 text-slate-600">
+//                                 <Globe className="w-4 h-4 flex-shrink-0" />
+//                                 <p className="text-sm font-medium">
+//                                   {member.affiliation}
+//                                 </p>
+//                               </div>
+//                             </>
+//                           )}
+//                         </div>
+                        
+//                         {/* Social Links (Optional) */}
+//                         <div className="flex justify-center gap-3 mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+//                           <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors">
+//                             <Mail className="w-4 h-4 text-slate-600" />
+//                           </button>
+//                           <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors">
+//                             <Linkedin className="w-4 h-4 text-slate-600" />
+//                           </button>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             </section>
+//           );
+//         })}
+//       </div>
+
+//       {/* Join the Team CTA */}
+//       <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-20">
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-4xl mx-auto text-center">
+//             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6 shadow-md">
+//               <Star className="w-5 h-5 text-amber-500" />
+//               <span className="text-sm font-bold text-slate-900">Be Part of Our Team</span>
+//             </div>
+            
+//             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+//               Interested in Joining?
+//             </h2>
+//             <p className="text-xl text-slate-600 mb-12">
+//               We're always looking for passionate researchers and experts to contribute to ICLEAS. 
+//               Join us as a reviewer, session chair, or committee member.
+//             </p>
+            
+//             <div className="flex flex-wrap justify-center gap-4">
+//               <button className="px-10 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all">
+//                 Become a Reviewer
+//               </button>
+//               <button className="px-10 py-4 bg-white text-slate-900 rounded-full font-bold text-lg hover:shadow-xl transition-all border-2 border-slate-200">
+//                 Contact Us
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Final CTA */}
+//       <section className="relative bg-gradient-to-br from-emerald-900 via-teal-900 to-green-900 py-20 overflow-hidden">
+//         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
+//         <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl"></div>
+//         <div className="absolute bottom-10 left-10 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl"></div>
+        
+//         <div className="relative z-10 container mx-auto px-4 text-center">
+//           <div className="max-w-3xl mx-auto space-y-8">
+//             <h2 className="text-4xl md:text-5xl font-bold text-white">
+//               Join ICLEAS 2026
+//             </h2>
+//             <p className="text-xl text-teal-200">
+//               Be part of a conference led by the world's brightest minds in science and sustainability
+//             </p>
+//             <div className="flex flex-wrap justify-center gap-4 pt-4">
+//               <button className="px-10 py-4 bg-white text-emerald-900 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all shadow-2xl">
+//                 Submit Your Paper
+//               </button>
+//               <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
+//                 Register Now
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+"use client"
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { 
   ChevronRight, Users, Award, Shield, Star, 
-  Globe, Sparkles, Mail, Linkedin 
+  Globe, Sparkles, Mail, Linkedin, Crown, Briefcase, UserCog 
 } from 'lucide-react';
 
 // Mock data - replace with your actual import
 const committees = [
   {
-    title: "Organizing Committee",
+    title: "Chief Patron",
+    icon: Crown,
     members: [
       { 
         name: "Dr. Sarah Mitchell", 
-        title: "Conference Chair", 
+        title: "Chief Patron", 
         affiliation: "Stanford University",
-        imgSrc: "https://picsum.photos/seed/chair1/400/400",
-        imgHint: "professional scientist"
-      },
+        imgSrc: "https://picsum.photos/seed/patron1/400/400",
+        imgHint: "professional scientist",
+        country: "🇺🇸"
+      }
+    ]
+  },
+  {
+    title: "Conference Chair",
+    icon: Award,
+    members: [
       { 
         name: "Dr. James Chen", 
-        title: "Program Chair", 
+        title: "Conference Chair", 
         affiliation: "MIT",
-        imgSrc: "https://picsum.photos/seed/chair2/400/400",
-        imgHint: "scientist portrait"
-      },
+        imgSrc: "https://picsum.photos/seed/chair1/400/400",
+        imgHint: "scientist portrait",
+        country: "🇺🇸"
+      }
+    ]
+  },
+  {
+    title: "Co-Chairs",
+    icon: Users,
+    members: [
       { 
         name: "Prof. Maria Rodriguez", 
-        title: "Publication Chair", 
+        title: "Co-Chair", 
         affiliation: "Oxford University",
-        imgSrc: "https://picsum.photos/seed/chair3/400/400",
-        imgHint: "academic portrait"
+        imgSrc: "https://picsum.photos/seed/cochair1/400/400",
+        imgHint: "academic portrait",
+        country: "🇬🇧"
       },
       { 
         name: "Dr. Kenji Tanaka", 
-        title: "Technical Chair", 
+        title: "Co-Chair", 
         affiliation: "University of Tokyo",
-        imgSrc: "https://picsum.photos/seed/chair4/400/400",
-        imgHint: "professor portrait"
+        imgSrc: "https://picsum.photos/seed/cochair2/400/400",
+        imgHint: "professor portrait",
+        country: "🇯🇵"
       }
     ]
   },
   {
-    title: "Program Committee",
+    title: "Program Chair",
+    icon: Briefcase,
     members: [
       { 
         name: "Dr. Emily White", 
-        title: "Track Chair - Life Sciences", 
+        title: "Program Chair", 
         affiliation: "Harvard Medical School",
-        imgSrc: "https://picsum.photos/seed/prog1/400/400",
-        imgHint: "researcher portrait"
-      },
-      { 
-        name: "Prof. Ahmed Hassan", 
-        title: "Track Chair - Environmental Science", 
-        affiliation: "Cairo University",
-        imgSrc: "https://picsum.photos/seed/prog2/400/400",
-        imgHint: "professor"
-      },
-      { 
-        name: "Dr. Lisa Anderson", 
-        title: "Track Chair - Applied Technologies", 
-        affiliation: "ETH Zurich",
-        imgSrc: "https://picsum.photos/seed/prog3/400/400",
-        imgHint: "scientist"
-      },
-      { 
-        name: "Dr. Raj Kumar", 
-        title: "Track Chair - Molecular Sciences", 
-        affiliation: "IIT Delhi",
-        imgSrc: "https://picsum.photos/seed/prog4/400/400",
-        imgHint: "academic"
+        imgSrc: "https://picsum.photos/seed/progchair1/400/400",
+        imgHint: "researcher portrait",
+        country: "🇺🇸"
       }
     ]
   },
   {
-    title: "Advisory Board",
+    title: "Organizing Committee",
+    icon: UserCog,
+    members: [
+      { 
+        name: "Prof. Ahmed Hassan", 
+        title: "Organizing Secretary", 
+        affiliation: "Cairo University",
+        imgSrc: "https://picsum.photos/seed/org1/400/400",
+        imgHint: "professor",
+        country: "🇪🇬"
+      },
+      { 
+        name: "Dr. Lisa Anderson", 
+        title: "Finance Chair", 
+        affiliation: "ETH Zurich",
+        imgSrc: "https://picsum.photos/seed/org2/400/400",
+        imgHint: "scientist",
+        country: "🇨🇭"
+      },
+      { 
+        name: "Dr. Raj Kumar", 
+        title: "Publication Chair", 
+        affiliation: "IIT Delhi",
+        imgSrc: "https://picsum.photos/seed/org3/400/400",
+        imgHint: "academic",
+        country: "🇮🇳"
+      },
+      { 
+        name: "Dr. Anna Kowalski", 
+        title: "Registration Chair", 
+        affiliation: "Warsaw University",
+        imgSrc: "https://picsum.photos/seed/org4/400/400",
+        imgHint: "researcher",
+        country: "🇵🇱"
+      }
+    ]
+  },
+  {
+    title: "Technical / Review Committee",
+    icon: Shield,
     members: [
       { 
         name: "Prof. Robert Williams", 
-        title: "Senior Advisor", 
+        title: "Technical Chair", 
         affiliation: "Cambridge University",
-        imgSrc: "https://picsum.photos/seed/adv1/400/400",
-        imgHint: "senior professor"
+        imgSrc: "https://picsum.photos/seed/tech1/400/400",
+        imgHint: "senior professor",
+        country: "🇬🇧"
       },
       { 
         name: "Dr. Sophie Martin", 
-        title: "Research Advisor", 
+        title: "Review Coordinator", 
         affiliation: "CNRS France",
-        imgSrc: "https://picsum.photos/seed/adv2/400/400",
-        imgHint: "researcher"
+        imgSrc: "https://picsum.photos/seed/tech2/400/400",
+        imgHint: "researcher",
+        country: "🇫🇷"
+      },
+      { 
+        name: "Dr. Carlos Silva", 
+        title: "Technical Reviewer", 
+        affiliation: "University of São Paulo",
+        imgSrc: "https://picsum.photos/seed/tech3/400/400",
+        imgHint: "professor",
+        country: "🇧🇷"
+      },
+      { 
+        name: "Dr. Yuki Nakamura", 
+        title: "Technical Reviewer", 
+        affiliation: "Kyoto University",
+        imgSrc: "https://picsum.photos/seed/tech4/400/400",
+        imgHint: "scientist",
+        country: "🇯🇵"
       }
     ]
   }
 ];
 
-const getCommitteeIcon = (title: string) => {
-  if (title.includes("Organizing")) return Users;
-  if (title.includes("Program")) return Award;
-  if (title.includes("Advisory")) return Shield;
-  return Star;
-};
-
-const getCommitteeGradient = (title: string) => {
-  if (title.includes("Organizing")) return "from-emerald-500 to-teal-500";
-  if (title.includes("Program")) return "from-teal-500 to-cyan-500";
-  if (title.includes("Advisory")) return "from-purple-500 to-pink-500";
-  return "from-lime-500 to-green-500";
-};
-
 export default function CommitteePage() {
+  const [activeTab, setActiveTab] = useState(0);
+  const activeCommittee = committees[activeTab];
+  const Icon = activeCommittee.icon;
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50">
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-green-950 py-24 md:py-32 overflow-hidden">
@@ -216,129 +594,156 @@ export default function CommitteePage() {
             </p>
           </div>
         </div>
+
       </section>
 
-      {/* Introduction Section */}
-      <section className="relative -mt-16 z-20">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-emerald-100">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-6">
-                <Sparkles className="w-5 h-5 text-emerald-600" />
-                <span className="text-sm font-bold text-emerald-900">World-Class Leadership</span>
-              </div>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Our conference is organized by a diverse team of internationally recognized researchers, 
-                academics, and industry leaders committed to advancing life sciences, environmental 
-                sustainability, and applied technologies for a better future.
-              </p>
+
+
+
+
+
+      {/* Active Committee Content */}
+      <section className="relative container mx-auto px-4 py-16 md:py-24">
+        
+
+        {/* Tabs Navigation */}
+        <section className="absolute -top-8 z-30 ">
+          <div className="container mx-auto p-2 bg-black/5 backdrop-blur-xl border border-gray-600/20 shadow-sm rounded-full overflow-hidden">
+            <div className="flex overflow-x-auto scrollbar-hide">
+              {committees.map((committee, idx) => {
+                const TabIcon = committee.icon;
+                return (
+                  <button
+                    key={committee.title}
+                    onClick={() => setActiveTab(idx)}
+                    className={`flex items-center gap-2 px-6 py-4 font-semibold text-sm whitespace-nowrap transition-all rounded-full ${
+                      activeTab === idx
+                        ? 'text-emerald-600 border-emerald-500 bg-white'
+                        : 'text-white border-transparent hover:text-slate-900 hover:bg-slate-50'
+                    }`}
+                  >
+                    <TabIcon className="w-4 h-4" />
+                    {committee.title}
+                    <span className={`ml-1 px-2 py-0.5 rounded-full text-xs font-bold ${
+                      activeTab === idx
+                        ? 'bg-orange-100 text-black'
+                        : 'bg-slate-100 text-slate-500'
+                    }`}>
+                      {committee.members.length}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
+        </section>
+
+
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 shadow-lg">
+              <Icon className="w-7 h-7 text-white" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              {activeCommittee.title}
+            </h2>
+          </div>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            {activeCommittee.members.length} {activeCommittee.members.length === 1 ? 'member' : 'members'} leading this committee
+          </p>
+        </div>
+
+        {/* Members Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {activeCommittee.members.map((member, memberIdx) => (
+            <div 
+              key={member.name}
+              className="group relative animate-fadeIn"
+              style={{ animationDelay: `${memberIdx * 100}ms` }}
+            >
+              {/* Card */}
+              <div className="relative bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-md">
+                {/* Image Container */}
+                <div className="relative aspect-square overflow-hidden bg-slate-100">
+                  {/* Country Flag Badge */}
+                  <div className="absolute top-3 left-3 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center text-xl shadow-md">
+                    {member.country || '🌍'}
+                  </div>
+                  
+                  {/* Action Buttons */}
+                  <div className="absolute top-3 right-3 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all shadow-md">
+                      <Sparkles className="w-4 h-4 text-slate-700 hover:text-white" />
+                    </button>
+                  </div>
+                  
+                  {/* Image */}
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src={member.imgSrc} 
+                      alt={`Photo of ${member.name}`} 
+                      fill 
+                      style={{objectFit: 'cover'}} 
+                      data-ai-hint={member.imgHint || 'person portrait'} 
+                      className="transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-5 space-y-3">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors leading-tight">
+                    {member.name}
+                  </h3>
+                  
+                  {member.title && (
+                    <div className="flex items-start gap-2">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+                      </div>
+                      <p className="text-sm text-emerald-600 font-medium leading-snug">
+                        {member.title}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {member.affiliation && (
+                    <div className="flex items-start gap-2 text-slate-600">
+                      <Globe className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <p className="text-sm leading-snug">
+                        {member.affiliation}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {/* Divider */}
+                  <div className="pt-3 border-t border-slate-100">
+                    <div className="flex gap-2">
+                      <button className="flex-1 px-3 py-2 rounded-lg bg-slate-50 hover:bg-emerald-500 text-slate-600 hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-medium border border-slate-200 hover:border-emerald-500">
+                        <Mail className="w-3.5 h-3.5" />
+                        Email
+                      </button>
+                      <button className="flex-1 px-3 py-2 rounded-lg bg-slate-50 hover:bg-emerald-500 text-slate-600 hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-medium border border-slate-200 hover:border-emerald-500">
+                        <Linkedin className="w-3.5 h-3.5" />
+                        Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Committee Sections */}
-      <div className="container mx-auto px-4 py-20 md:py-32 space-y-32">
-        {committees.map((committee, idx) => {
-          const Icon = getCommitteeIcon(committee.title);
-          const gradient = getCommitteeGradient(committee.title);
-          
-          return (
-            <section 
-              key={committee.title} 
-              id={committee.title.toLowerCase().replace(/ /g, '-')}
-              className="scroll-mt-20"
-            >
-              {/* Section Header */}
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 mb-6 shadow-xl">
-                  <Icon className="w-10 h-10 text-white" />
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                  {committee.title}
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
-              </div>
-
-              {/* Members Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                {committee.members.map((member, memberIdx) => (
-                  <div 
-                    key={member.name}
-                    className="group"
-                    style={{ animationDelay: `${memberIdx * 100}ms` }}
-                  >
-                    <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-slate-100 hover:border-emerald-300">
-                      {/* Card Background Gradient */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity`}></div>
-                      
-                      <div className="relative p-6">
-                        {/* Image */}
-                        {member.imgSrc && (
-                          <div className="relative mb-6">
-                            <div className="absolute -inset-1 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full opacity-20 group-hover:opacity-40 transition-opacity blur-lg"></div>
-                            <div className="relative h-32 w-32 rounded-full overflow-hidden mx-auto ring-4 ring-white shadow-xl">
-                              <Image 
-                                src={member.imgSrc} 
-                                alt={`Photo of ${member.name}`} 
-                                fill 
-                                style={{objectFit: 'cover'}} 
-                                data-ai-hint={member.imgHint || 'person portrait'} 
-                                className="transform group-hover:scale-110 transition-transform duration-500"
-                              />
-                            </div>
-                          </div>
-                        )}
-                        
-                        {/* Content */}
-                        <div className="text-center space-y-3">
-                          <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
-                            {member.name}
-                          </h3>
-                          
-                          {member.title && (
-                            <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${gradient} text-white text-sm font-semibold shadow-md`}>
-                              {member.title}
-                            </div>
-                          )}
-                          
-                          {member.affiliation && (
-                            <>
-                              <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-4"></div>
-                              <div className="flex items-center justify-center gap-2 text-slate-600">
-                                <Globe className="w-4 h-4 flex-shrink-0" />
-                                <p className="text-sm font-medium">
-                                  {member.affiliation}
-                                </p>
-                              </div>
-                            </>
-                          )}
-                        </div>
-                        
-                        {/* Social Links (Optional) */}
-                        <div className="flex justify-center gap-3 mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors">
-                            <Mail className="w-4 h-4 text-slate-600" />
-                          </button>
-                          <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors">
-                            <Linkedin className="w-4 h-4 text-slate-600" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          );
-        })}
-      </div>
-
       {/* Join the Team CTA */}
-      <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-emerald-50 to-teal-50 py-20 border-y border-emerald-100">
+        <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6 shadow-md">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-emerald-200 rounded-full mb-6 shadow-sm">
               <Star className="w-5 h-5 text-amber-500" />
               <span className="text-sm font-bold text-slate-900">Be Part of Our Team</span>
             </div>
@@ -346,16 +751,16 @@ export default function CommitteePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               Interested in Joining?
             </h2>
-            <p className="text-xl text-slate-600 mb-12">
+            <p className="text-xl text-slate-700 mb-12 max-w-2xl mx-auto">
               We're always looking for passionate researchers and experts to contribute to ICLEAS. 
               Join us as a reviewer, session chair, or committee member.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-10 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all">
+              <button className="px-10 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full font-bold text-lg hover:shadow-xl hover:shadow-emerald-500/20 transition-all">
                 Become a Reviewer
               </button>
-              <button className="px-10 py-4 bg-white text-slate-900 rounded-full font-bold text-lg hover:shadow-xl transition-all border-2 border-slate-200">
+              <button className="px-10 py-4 bg-white text-slate-900 rounded-full font-bold text-lg hover:bg-slate-50 transition-all border-2 border-slate-200 shadow-md">
                 Contact Us
               </button>
             </div>
@@ -363,31 +768,32 @@ export default function CommitteePage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="relative bg-gradient-to-br from-emerald-900 via-teal-900 to-green-900 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-        <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl"></div>
-        
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Join ICLEAS 2026
-            </h2>
-            <p className="text-xl text-teal-200">
-              Be part of a conference led by the world's brightest minds in science and sustainability
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <button className="px-10 py-4 bg-white text-emerald-900 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all shadow-2xl">
-                Submit Your Paper
-              </button>
-              <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
-                Register Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out forwards;
+          opacity: 0;
+        }
+
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 }
