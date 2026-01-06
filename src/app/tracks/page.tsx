@@ -219,35 +219,6 @@ export default function ConferenceTracksPage() {
         </div>
       </section>
 
-      {/* Submission Guidelines */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl shadow-2xl p-8 md:p-12 text-white">
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                <BookOpen className="w-8 h-8 text-white" />
-              </div>
-              <div className="flex-1">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Ready to Submit Your Research?
-                </h2>
-                <p className="text-xl text-emerald-100 mb-6 leading-relaxed">
-                  Choose your track carefully to ensure your paper reaches the right audience. Review our submission guidelines and formatting requirements before submitting.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <button className="px-8 py-4 bg-white text-emerald-900 rounded-xl font-bold text-lg hover:shadow-xl transition-all">
-                    View Submission Guidelines
-                  </button>
-                  <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
-                    Contact Track Chairs
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="relative bg-gradient-to-br from-emerald-900 via-teal-900 to-green-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
