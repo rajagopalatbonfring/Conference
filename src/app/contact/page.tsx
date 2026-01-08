@@ -465,7 +465,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Main Contact Section */}
       <section className="relative -mt-20 z-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-8xl mx-auto">
             <div className="grid lg:grid-cols-5 gap-8">
               
               {/* Contact Info Card - 2 columns */}
