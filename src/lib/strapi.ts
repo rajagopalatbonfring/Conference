@@ -1,4 +1,4 @@
-const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
+const STRAPI_URL = process.env.STRAPI_URL || 'https://strapi.scientiaforum.org';
 const TOKEN = process.env.STRAPI_API_TOKEN;
 
 async function fetchStrapi<T = any>(
