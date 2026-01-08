@@ -357,17 +357,28 @@
 
 
 
-"use client"
+"use client";
 
-import { useState } from 'react';
-import { 
-  ChevronRight, Mail, Phone, MapPin, Clock,
-  Send, Sparkles, CheckCircle2, User, Building, 
-  MessageSquare, Leaf, Globe, MessageCircle
-} from 'lucide-react';
+import { useState, FormEvent } from "react";
+import {
+  ChevronRight,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle2,
+  User,
+  Building,
+  MessageSquare,
+  Leaf,
+  Globe,
+  MessageCircle,
+} from "lucide-react";
 
-
-// Add type definitions
+// ────────────────────────────────────────────────
+// Types
+// ────────────────────────────────────────────────
 interface FormState {
   name: string;
   email: string;
@@ -383,78 +394,83 @@ interface SubmitStatus {
   message: string;
 }
 
-
+// ────────────────────────────────────────────────
+// Main Component
+// ────────────────────────────────────────────────
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    organization: '',
-    subject: '',
-    message: '',
-    subscribe: false
+  const [formState, setFormState] = useState<FormState>({
+    name: "",
+    email: "",
+    phone: "",
+    organization: "",
+    subject: "",
+    message: "",
+    subscribe: false,
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
+    // Simulate API call
     setTimeout(() => {
-      setSubmitStatus({ 
-        success: true, 
-        message: "Thank you for your message! We will get back to you within 24-48 hours." 
+      setSubmitStatus({
+        success: true,
+        message:
+          "Thank you for your message! We will get back to you within 24-48 hours.",
       });
       setIsSubmitting(false);
+
+      // Reset form
       setFormState({
-        name: '',
-        email: '',
-        phone: '',
-        organization: '',
-        subject: '',
-        message: '',
-        subscribe: false
+        name: "",
+        email: "",
+        phone: "",
+        organization: "",
+        subject: "",
+        message: "",
+        subscribe: false,
       });
     }, 1500);
   };
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormState(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
+    setFormState((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   return (
     <div className="min-h-screen bg-white">
-      
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-green-950 py-32 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
-        <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"></div>
-        
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
+
         <div className="relative z-10 container mx-auto px-4">
-          {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-emerald-200 mb-8">
             <a href="/" className="hover:text-white transition-colors">Home</a>
             <ChevronRight className="w-4 h-4" />
             <span className="text-white font-semibold">Contact Us</span>
           </div>
-          
+
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
               <MessageCircle className="w-4 h-4 text-emerald-400" />
               <span className="text-sm text-white font-medium">We're Here to Help</span>
             </div>
-            
-            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-              Contact Us
-            </h1>
+
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">Contact Us</h1>
             <p className="text-xl md:text-2xl text-teal-100 leading-relaxed">
               Have questions about ICLEAS 2026? Our team is ready to assist you with submissions, registration, and any inquiries you may have.
             </p>
@@ -467,21 +483,18 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         <div className="container mx-auto px-4">
           <div className="max-w-8xl mx-auto">
             <div className="grid lg:grid-cols-5 gap-8">
-              
-              {/* Contact Info Card - 2 columns */}
+              {/* Contact Info Card */}
               <div className="lg:col-span-2">
                 <div className="bg-gradient-to-br from-emerald-900 via-teal-900 to-green-900 rounded-3xl p-10 shadow-2xl h-full relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-                  
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
+
                   <div className="relative z-10 space-y-8">
                     <div>
                       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
                         <Leaf className="w-4 h-4 text-emerald-400" />
                         <span className="text-sm text-white font-medium">Get in Touch</span>
                       </div>
-                      <h2 className="text-3xl font-bold text-white mb-3">
-                        Contact Information
-                      </h2>
+                      <h2 className="text-3xl font-bold text-white mb-3">Contact Information</h2>
                       <p className="text-teal-200 leading-relaxed">
                         Reach out to us for any inquiries about ICLEAS 2026. We're here to help!
                       </p>
@@ -495,7 +508,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         </div>
                         <div>
                           <div className="text-sm font-semibold text-emerald-300 mb-1">Email Us</div>
-                          <a href="mailto:info@icleas2026.org" className="text-white hover:text-emerald-300 transition-colors font-medium">
+                          <a
+                            href="mailto:info@icleas2026.org"
+                            className="text-white hover:text-emerald-300 transition-colors font-medium"
+                          >
                             info@icleas2026.org
                           </a>
                           <div className="text-sm text-teal-300 mt-1">Response within 24 hours</div>
@@ -559,7 +575,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 </div>
               </div>
 
-              {/* Contact Form - 3 columns */}
+              {/* Contact Form */}
               <div className="lg:col-span-3">
                 <div className="bg-white rounded-3xl shadow-2xl p-10 border-2 border-emerald-100">
                   <div className="mb-8">
@@ -567,9 +583,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                       <Send className="w-5 h-5 text-emerald-600" />
                       <span className="text-sm font-bold text-slate-900">Send Us a Message</span>
                     </div>
-                    <h2 className="text-4xl font-bold text-slate-900 mb-3">
-                      Have a Question?
-                    </h2>
+                    <h2 className="text-4xl font-bold text-slate-900 mb-3">Have a Question?</h2>
                     <p className="text-lg text-slate-600">
                       Fill out the form and we'll get back to you within 24-48 hours.
                     </p>
@@ -584,31 +598,31 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         </label>
                         <div className="relative">
                           <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                          <input 
-                            id="name" 
+                          <input
+                            id="name"
                             name="name"
                             value={formState.name}
                             onChange={handleChange}
-                            placeholder="Your Full Name" 
+                            placeholder="Your Full Name"
                             required
                             className="w-full pl-12 pr-4 py-3 border-2 border-slate-200 rounded-xl text-base focus:border-emerald-500 focus:outline-none transition-colors"
                           />
                         </div>
                       </div>
-                      
+
                       <div className="space-y-2">
                         <label htmlFor="email" className="block text-sm font-bold text-slate-900">
                           Email <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
                           <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                          <input 
-                            id="email" 
+                          <input
+                            id="email"
                             name="email"
                             type="email"
                             value={formState.email}
                             onChange={handleChange}
-                            placeholder="your.email@example.com" 
+                            placeholder="your.email@example.com"
                             required
                             className="w-full pl-12 pr-4 py-3 border-2 border-slate-200 rounded-xl text-base focus:border-emerald-500 focus:outline-none transition-colors"
                           />
@@ -622,29 +636,29 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         <label htmlFor="phone" className="block text-sm font-bold text-slate-900">
                           Phone <span className="text-slate-400 text-xs">(Optional)</span>
                         </label>
-                        <input 
-                          id="phone" 
+                        <input
+                          id="phone"
                           name="phone"
                           type="tel"
                           value={formState.phone}
                           onChange={handleChange}
-                          placeholder="+1 234 567 890"
+                          placeholder="+91 98765 43210"
                           className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-base focus:border-emerald-500 focus:outline-none transition-colors"
                         />
                       </div>
-                      
+
                       <div className="space-y-2">
                         <label htmlFor="organization" className="block text-sm font-bold text-slate-900">
                           Organization <span className="text-slate-400 text-xs">(Optional)</span>
                         </label>
                         <div className="relative">
                           <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                          <input 
-                            id="organization" 
+                          <input
+                            id="organization"
                             name="organization"
                             value={formState.organization}
                             onChange={handleChange}
-                            placeholder="Your Organization"
+                            placeholder="Your Organization / University"
                             className="w-full pl-12 pr-4 py-3 border-2 border-slate-200 rounded-xl text-base focus:border-emerald-500 focus:outline-none transition-colors"
                           />
                         </div>
@@ -696,7 +710,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         rows={6}
                         required
                         minLength={50}
-                        maxLength={2000}
                         className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-base focus:border-emerald-500 focus:outline-none transition-colors resize-none"
                       />
                       <div className="text-xs text-slate-500 text-right">
@@ -707,9 +720,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     {/* Subscribe Checkbox */}
                     <div className="bg-emerald-50 rounded-xl p-4 border-2 border-emerald-100">
                       <div className="flex items-start space-x-3">
-                        <input 
+                        <input
                           type="checkbox"
-                          id="subscribe" 
+                          id="subscribe"
                           name="subscribe"
                           checked={formState.subscribe}
                           onChange={handleChange}
@@ -738,8 +751,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     )}
 
                     {/* Submit Button */}
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       disabled={isSubmitting}
                       className="w-full px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-3"
                     >
@@ -758,7 +771,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   </form>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -797,10 +809,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
       {/* Final CTA */}
       <section className="bg-gradient-to-br from-emerald-900 via-teal-900 to-green-900 py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-        <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl"></div>
-        
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
+        <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl" />
+
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -820,7 +832,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
