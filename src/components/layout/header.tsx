@@ -201,9 +201,9 @@ export default function Header() {
           <div className="flex h-24 items-center justify-between">
             {/* Logo Section - More Prominent */}
             <a href="/" className="flex items-center gap-4 group">
-              <div className="relative">
-                
-                {/* Logo container */}
+
+              <img className="w-64" src="/images/icon.jpg" alt="" />
+              {/* <div className="relative">
                 <div className="relative">
                   <div className="w-12 h-12 rounded-2xl bg-none flex items-center justify-center  transition-all duration-300 group-hover:scale-105">
                     <Leaf className="w-12 h-12 text-emerald-600" />
@@ -215,7 +215,7 @@ export default function Header() {
                 <div className="text-2xl font-black text-transparent bg-clip-text bg-black group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-lime-700 transition-all duration-300">
                   ICLEAS 20<span className="text-orange-400">26</span>
                 </div>
-              </div>
+              </div> */}
             </a>
 
             {/* Desktop Navigation - Floating Style */}

@@ -665,20 +665,17 @@ export default function CommitteePage() {
               {/* Card */}
               <div className="relative bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl shadow-md">
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-slate-100">
-                  {/* Country Flag Badge */}
+                {/* <div className="relative aspect-square overflow-hidden bg-slate-100">
                   <div className="absolute top-3 left-3 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center text-xl shadow-md">
                     {member.country || '🌍'}
                   </div>
                   
-                  {/* Action Buttons */}
                   <div className="absolute top-3 right-3 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all shadow-md">
                       <Sparkles className="w-4 h-4 text-slate-700 hover:text-white" />
                     </button>
                   </div>
                   
-                  {/* Image */}
                   <div className="relative w-full h-full">
                     <Image 
                       src={member.imgSrc} 
@@ -688,10 +685,9 @@ export default function CommitteePage() {
                       data-ai-hint={member.imgHint || 'person portrait'} 
                       className="transform group-hover:scale-110 transition-transform duration-700"
                     />
-                    {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Content */}
                 <div className="p-5 space-y-3">

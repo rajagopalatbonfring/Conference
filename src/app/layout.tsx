@@ -14,8 +14,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'ICLEAS 2026 - International Conference on Life, Environmental & Applied Sciences | June 25-26',
-  description: 'Join ICLEAS 2026 online. Submit research papers on life sciences, environmental studies, and applied technologies. Keynotes from leading researchers, June 25-26, 2026.',
+  title: 'ICLEAS 2026 | International Conference on Life, Environmental & Applied Sciences',
+  description: 'Join ICLEAS 2026, an international online conference on Life Sciences, Environmental Studies & Applied Sciences. Submit your research, attend expert sessions, and publish peer-reviewed papers. July 23–24, 2026.',
 };
 
 export default function RootLayout({

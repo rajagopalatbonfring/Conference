@@ -159,6 +159,14 @@ import {
   Leaf, Microscope, BookOpen, Sparkles, Building2,
   Mail, Heart, Zap, Star
 } from 'lucide-react';
+import type { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: 'About ICLEAS 2026 | International Life & Environmental Sciences Conference',
+  description: 'Learn about ICLEAS 2026 – an international platform promoting interdisciplinary research in life sciences, environmental studies, and applied technologies.',
+};
+
 
 const objectives = [
   "Advance high-quality research in life sciences, environmental studies, and applied technologies",
@@ -227,7 +235,8 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-xl md:text-2xl text-teal-100 max-w-3xl mx-auto font-light leading-relaxed">
-                Uniting brilliant minds in life sciences, environmental research, and applied technologies for a sustainable tomorrow
+                ICLEAS 2026 serves as a global academic forum to exchange innovative ideas, cutting-edge research findings, and best practices across life sciences, environmental sciences, and applied technologies.
+The conference aims to foster interdisciplinary collaboration and address global challenges such as sustainability, climate change, health, and technological innovation.
               </p>
             </div>
           </div>

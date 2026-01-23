@@ -325,7 +325,8 @@ import {
   Newspaper, BookCheck, Globe, MicVocal, GitFork, 
   ArrowRight, Sparkles, Award, TrendingUp, Clock,
   CheckCircle2, Circle, Zap, Star, Target, Lightbulb,
-  MessageCircle, Mail, Phone, Leaf, Microscope, Droplet
+  MessageCircle, Mail, Phone, Leaf, Microscope, Droplet,
+  Building2
 } from 'lucide-react';
 
 import bg from '../assets/bg1.jpg';
@@ -401,17 +402,13 @@ export default function Home() {
             </div>
             
             {/* Main Title */}
-            <h1 className="font-bold tracking-tight text-white max-w-5xl mx-auto">
-              <span className="block text-5xl md:text-7xl lg:text-8xl mb-4 bg-white bg-clip-text text-transparent">
-                ICLEAS 20<span className="text-orange-400">26</span>
-              </span>
-              <span className="block text-2xl md:text-3xl lg:text-4xl text-orange-300 font-light">
-                International Conference on Life, Environmental & Applied Sciences
-              </span>
+            <h1 className="font-bold tracking-wide leading-loose text-white max-w-5xl mx-auto text-5xl md:text-6xl lg:text-7xl mb-4 bg-white bg-clip-text text-transparent leading-[1.1] md:leading-[1.3]">
+                International Conference on Life, Environmental & Applied Sciences 
+                 <span className='block mt-8'> (ICLEAS 2026)</span>
             </h1>
             
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-orange-400 max-w-3xl mx-auto font-bold leading-relaxed">
               Integrating Life Sciences, Environment & Technology for a Sustainable Future
             </p>
             
@@ -419,11 +416,15 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-6 text-white/90">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                <span className="text-lg">June 25–26, 2026</span>
+                <span className="text-lg">July 23–24, 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-5 h-5" />
                 <span className="text-lg">Online Conference</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Building2 className="w-5 h-5" />
+                <span className="text-lg">ScientiaForum</span>
               </div>
             </div>
             
