@@ -513,7 +513,7 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-xl md:text-2xl text-teal-100 max-w-3xl mx-auto font-light leading-relaxed">
-                ICLEAS 2026 is the inaugural online international conference on life sciences, environmental sciences, and applied sciences, organized by ScientiaForum. This fully virtual event brings together global researchers, scientists, academicians, industry experts, and students to share groundbreaking research, foster interdisciplinary collaboration, and develop sustainable solutions for climate change, biodiversity, health innovation, and emerging technologies.
+                Uniting brilliant minds in life sciences, environmental research, and applied technologies for a sustainable tomorrow.
               </p>
             </div>
           </div>
