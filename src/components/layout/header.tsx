@@ -202,7 +202,7 @@ export default function Header() {
             {/* Logo Section - More Prominent */}
             <a href="/" className="flex items-center gap-4 group">
 
-              <img className="w-64" src="/images/icon.jpg" alt="" />
+              <img className="w-[360px]" src="/images/icon.jpg" alt="" />
               {/* <div className="relative">
                 <div className="relative">
                   <div className="w-12 h-12 rounded-2xl bg-none flex items-center justify-center  transition-all duration-300 group-hover:scale-105">
