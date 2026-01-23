@@ -779,19 +779,6 @@ const faqs = [
 export default function Home() {
   return (
     <div className="flex flex-col bg-white">
-      {/* 
-        SEO META TAGS — Add this via next/head or helmet in real app:
-        <Head>
-          <title>ICLEAS 2026 | International Conference on Life, Environmental & Applied Sciences | July 23–24, 2026 | Online</title>
-          <meta name="description" content="Join ICLEAS 2026 — premier online international conference on life sciences, environmental sciences, and applied sciences. Submit papers, present research, network globally, and publish in proceedings. Theme: Integrating Life Sciences, Environment & Technology for a Sustainable Future." />
-          <meta name="keywords" content="ICLEAS 2026, life sciences conference 2026, environmental sciences conference, applied sciences conference, online international conference, sustainable future conference, interdisciplinary science conference, ScientiaForum conference" />
-          <meta property="og:title" content="ICLEAS 2026 | International Conference on Life, Environmental & Applied Sciences" />
-          <meta property="og:description" content="Online conference July 23–24, 2026: Share research in life sciences, environmental studies, biotechnology, climate change, and emerging technologies for sustainability." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://yourdomain.com/" />
-          <meta name="twitter:card" content="summary_large_image" />
-        </Head>
-      */}
 
       {/* Hero Section - Nature-Inspired Design */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-950 via-teal-900 to-green-950">
@@ -1124,7 +1111,7 @@ export default function Home() {
                       <span className="text-sm font-bold text-amber-900 uppercase tracking-wider">Conference Vision</span>
                     </div>
                     <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-                      Why Attend ICLEAS 2026 – International Life & Environmental Sciences Conference
+                      Why Attend ICLEAS 2026
                     </h2>
                   </div>
                   
