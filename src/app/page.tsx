@@ -806,7 +806,7 @@ export default function Home() {
             {/* Main Title */}
             <h1 className="font-bold tracking-wide leading-loose text-white max-w-5xl mx-auto text-5xl md:text-6xl lg:text-7xl mb-4 bg-white bg-clip-text text-transparent leading-[1.1] md:leading-[1.3]">
                 International Conference on Life, Environmental & Applied Sciences 
-                 <span className='block mt-16'> (ICLEAS 2026)</span>
+                 <span className='block mt-16'> (ICLEAS - 2026)</span>
             </h1>
             
             {/* Subtitle */}
@@ -1173,10 +1173,9 @@ export default function Home() {
         </section>
 
         {/* Latest News - Editorial Style */}
-        <section className="bg-white py-24 md:py-32">
+        {/* <section className="bg-white py-24 md:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              {/* Section Header */}
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 mb-6">
                   <div className="w-12 h-px bg-slate-300"></div>
@@ -1189,7 +1188,6 @@ export default function Home() {
                 <p className="text-lg text-slate-600">Stay informed about call for papers, speakers, registration, and more</p>
               </div>
               
-              {/* News Placeholder */}
               <div className="relative py-24">
                 <div className="text-center space-y-6">
                   <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-slate-100">
@@ -1209,7 +1207,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Publication Partners - Nature / Sustainability Theme */}
         <section className="bg-gradient-to-br from-emerald-950 via-teal-950 to-green-950 py-24 md:py-32 relative overflow-hidden">
