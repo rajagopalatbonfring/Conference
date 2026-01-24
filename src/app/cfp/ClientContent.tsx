@@ -491,10 +491,10 @@ import {
 } from 'lucide-react';
 
 const importantDates = [
-  { detail: "Abstract Submission Deadline", value: "[Date]", icon: Clock, status: "Open" },
-  { detail: "Full Paper Submission Deadline", value: "[Date]", icon: FileText, status: "Upcoming" },
-  { detail: "Notification of Acceptance", value: "[Date]", icon: Calendar, status: "Upcoming" },
-  { detail: "Registration Deadline", value: "[Date]", icon: Target, status: "Upcoming" },
+  { detail: "Abstract Submission Deadline", value: "March 25, 2026", icon: Clock, status: "Open" },
+  { detail: "Full Paper Submission Deadline", value: "April 30, 2026", icon: FileText, status: "Upcoming" },
+  { detail: "Notification of Acceptance", value: "May 30, 2026", icon: Calendar, status: "Upcoming" },
+  { detail: "Registration Deadline", value: "June 30, 2026", icon: Target, status: "Upcoming" },
   { detail: "Conference Dates", value: "July 23–24, 2026", icon: Award, status: "Upcoming" },
 ];
 

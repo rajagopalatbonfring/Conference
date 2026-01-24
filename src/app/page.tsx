@@ -755,9 +755,9 @@ const speakers = [
 
 // Important dates updated to match your original July 23–24, 2026 (placeholders refined for realism/SEO)
 const importantDates = [
-  { title: "Abstract / Full Paper Submission Deadline", date: "March 31, 2026", status: "Open" },
+  { title: "Abstract / Full Paper Submission Deadline", date: "March 25, 2026", status: "Open" },
   { title: "Notification of Acceptance", date: "April 30, 2026", status: "Upcoming" },
-  { title: "Early Bird Registration Deadline", date: "May 31, 2026", status: "Upcoming" },
+  { title: "Early Bird Registration Deadline", date: "June 15, 2026", status: "Upcoming" },
   { title: "Conference Dates", date: "July 23–24, 2026", status: "Upcoming" }
 ];
 

@@ -238,7 +238,7 @@ export default function ClientContent() {
                       </div>
                       <div>
                         <h4 className="font-bold text-slate-900 mb-1">Paper Submission</h4>
-                        <p className="text-sm text-slate-600">Deadline: March 31, 2026</p>
+                        <p className="text-sm text-slate-600">Deadline: April 30, 2026</p>
                       </div>
                     </div>
 
@@ -258,7 +258,7 @@ export default function ClientContent() {
                       </div>
                       <div>
                         <h4 className="font-bold text-slate-900 mb-1">Acceptance Notification</h4>
-                        <p className="text-sm text-slate-600">By May 15, 2026</p>
+                        <p className="text-sm text-slate-600">By May 30, 2026</p>
                       </div>
                     </div>
 
@@ -268,7 +268,7 @@ export default function ClientContent() {
                       </div>
                       <div>
                         <h4 className="font-bold text-slate-900 mb-1">Camera-Ready Submission</h4>
-                        <p className="text-sm text-slate-600">Deadline: June 1, 2026</p>
+                        <p className="text-sm text-slate-600">Deadline: June 10, 2026</p>
                       </div>
                     </div>
 
@@ -278,7 +278,7 @@ export default function ClientContent() {
                       </div>
                       <div>
                         <h4 className="font-bold text-slate-900 mb-1">Proceedings Publication</h4>
-                        <p className="text-sm text-slate-600">Within 30 days after conference (July–Aug 2026)</p>
+                        <p className="text-sm text-slate-600">Within 30 days after conference (June–july 2026)</p>
                       </div>
                     </div>
                   </div>

@@ -64,7 +64,7 @@ export default function ClientContent() {
             <div className="flex flex-wrap justify-center gap-6 text-white/90">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                <span className="text-lg">Early Bird Deadline: Apr 30, 2026</span>
+                <span className="text-lg">Early Bird Deadline: June 15, 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <Gift className="w-5 h-5" />
