@@ -371,7 +371,7 @@ export default function ClientContent() {
       </section>
 
       {/* Journal Collaboration Section */}
-      <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-24">
+      {/* <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -433,7 +433,6 @@ export default function ClientContent() {
               ))}
             </div>
 
-            {/* Benefits for Authors */}
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Why Publish with ICLEAS Partner Journals?</h3>
               <div className="grid md:grid-cols-3 gap-6">
@@ -462,7 +461,102 @@ export default function ClientContent() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      {/* Journal Collaboration Section */}
+<section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-24">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm mb-6">
+          <Star className="w-5 h-5 text-emerald-600" />
+          <span className="text-sm font-bold text-slate-900">Journal Publication Opportunities</span>
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          Partner Journals & Extended Publication
+        </h2>
+        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          High-quality selected papers will be fast-tracked for publication in Scopus, SCI, Web of Science, and PubMed-indexed partner journals
+        </p>
+      </div>
+
+      {/* Coming Soon Placeholder – matches your emerald/teal premium style */}
+      <div className="mb-12">
+        <div className="bg-white rounded-2xl shadow-xl border-2 border-slate-100 hover:border-emerald-300 transition-all overflow-hidden relative">
+          {/* Top accent bar – consistent with your journal cards */}
+          <div className="h-3 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+          
+          <div className="p-10 md:p-16 text-center space-y-8 relative">
+            {/* Subtle background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/60 to-teal-50/40 pointer-events-none"></div>
+            
+            <div className="relative">
+              <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-700 mx-auto mb-6 shadow-inner">
+                <svg 
+                  className="w-10 h-10 md:w-12 md:h-12" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
+                  />
+                </svg>
+              </div>
+
+              <h3 className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6 tracking-tight">
+                We Will Update Soon!
+              </h3>
+
+              <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-4xl mx-auto mb-10">
+                Our official partner journals and publication pathways for ICLEAS 2026 are currently under final negotiation 
+                with leading publishers. A curated list of high-impact Scopus, SCI, WoS & PubMed-indexed journals 
+                will be announced here very shortly.
+              </p>
+
+
+              <p className="mt-10 text-slate-500 text-base italic">
+                Announcements expected soon • Selected papers will enjoy fast-track publication in top-tier indexed journals
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits for Authors – kept unchanged as it's general/value-focused */}
+      <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why Publish with ICLEAS Partner Journals?</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 mb-4">
+              <TrendingUp className="w-7 h-7 text-white" />
+            </div>
+            <h4 className="font-bold text-slate-900 mb-2">Higher Impact & Citations</h4>
+            <p className="text-sm text-slate-600">Reach wider academic & professional audiences</p>
+          </div>
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 mb-4">
+              <Globe className="w-7 h-7 text-white" />
+            </div>
+            <h4 className="font-bold text-slate-900 mb-2">Global Visibility</h4>
+            <p className="text-sm text-slate-600">Indexed in major databases – permanent discoverability</p>
+          </div>
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-lime-500 to-green-500 mb-4">
+              <Award className="w-7 h-7 text-white" />
+            </div>
+            <h4 className="font-bold text-slate-900 mb-2">Prestige & Recognition</h4>
+            <p className="text-sm text-slate-600">Publication in respected Scopus/SCI journals</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Partnership Application Form Section */}
       <section className="container mx-auto px-4 py-24">

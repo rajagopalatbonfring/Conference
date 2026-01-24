@@ -523,11 +523,10 @@ export default function AboutPage() {
       <div className="space-y-0">
         
         {/* Mission & Vision Section */}
-        <section className="bg-white py-24 md:py-32">
+        {/* <section className="bg-white py-24 md:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
-                {/* Image Side */}
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl opacity-20 blur-xl"></div>
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -545,8 +544,6 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                
-                {/* Content Side */}
                 <div className="space-y-8">
                   <div>
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-6">
@@ -585,7 +582,96 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        {/* About ICLEAS-2026 Section */}
+{/* About ICLEAS-2026 Section */}
+<section className="bg-white py-24 md:py-32">
+  <div className="container mx-auto px-4">
+    <div className="max-w-7xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
+        {/* Image Side – slightly adjusted gap for balance */}
+        <div className="relative order-2 lg:order-1">
+          <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl opacity-20 blur-xl"></div>
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <img
+              src="https://picsum.photos/seed/conf-about/800/600"
+              alt="Global interdisciplinary collaboration in life, environmental and applied sciences"
+              className="w-full h-[480px] md:h-[520px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/65 via-slate-900/25 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="flex items-center gap-3 text-white">
+                <Sparkles className="w-6 h-6" />
+                <span className="text-lg font-semibold">Advancing Science for a Sustainable Tomorrow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Content Side – improved readability & hierarchy */}
+        <div className="space-y-10 order-1 lg:order-2">
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-6">
+              <Target className="w-5 h-5 text-emerald-600" />
+              <span className="text-sm font-bold text-emerald-900 uppercase tracking-wider">About ICLEAS-2026</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-5 leading-tight">
+              About ICLEAS-2026
+            </h2>
+          </div>
+          
+          <div className="space-y-7 text-slate-700">
+            <p className="text-xl leading-relaxed font-medium">
+              ICLEAS-2026 is a premier international academic forum dedicated to advancing knowledge, innovation, and interdisciplinary collaboration in <span className="text-emerald-700 font-semibold">life sciences</span>, <span className="text-teal-700 font-semibold">environmental sciences</span>, and <span className="text-emerald-700 font-semibold">applied sciences</span>.
+            </p>
+
+            <p className="text-lg leading-relaxed">
+              Scheduled for 2026 and organized by <span className="font-semibold text-slate-800">ScientiaForum</span>, the conference brings together researchers, academicians, industry experts, and emerging scholars worldwide to share cutting-edge research and practical solutions for pressing global challenges.
+            </p>
+
+            <div className="space-y-4 pt-2">
+              <h4 className="text-xl font-bold text-slate-800">Core Focus Areas</h4>
+              <ul className="space-y-3 text-lg">
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-emerald-500"></div>
+                  <span>Exchange of original research ideas and recent technological advancements</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-emerald-500"></div>
+                  <span>Integration of scientific research with real-world applications in sustainability, environmental protection, healthcare, biotechnology, and innovative technologies</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-emerald-500"></div>
+                  <span>Multidisciplinary and cross-disciplinary dialogue among diverse research communities</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-emerald-500"></div>
+                  <span>Contributions from fundamental theory to industry-oriented innovations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Badges – kept for visual interest, slightly tightened */}
+          <div className="flex flex-wrap gap-3 pt-3">
+            <div className="flex items-center gap-2 px-5 py-2.5 bg-white rounded-full shadow-md border border-emerald-100 text-sm font-semibold text-slate-900">
+              <Globe className="w-5 h-5 text-emerald-600" />
+              Global Forum
+            </div>
+            <div className="flex items-center gap-2 px-5 py-2.5 bg-white rounded-full shadow-md border border-teal-100 text-sm font-semibold text-slate-900">
+              <Microscope className="w-5 h-5 text-teal-600" />
+              Interdisciplinary
+            </div>
+            <div className="flex items-center gap-2 px-5 py-2.5 bg-white rounded-full shadow-md border border-lime-100 text-sm font-semibold text-slate-900">
+              <Heart className="w-5 h-5 text-lime-600" />
+              Sustainability Focus
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Conference History - Featured Section */}
         <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-emerald-50 to-teal-50">

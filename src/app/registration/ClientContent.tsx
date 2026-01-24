@@ -10,12 +10,12 @@ import {
 
 // Your original mock data – unchanged
 const registrationTiers = [
-  { category: "Student (Author)", earlyBirdPrice: "$150", regularPrice: "$200" },
-  { category: "Academic (Author)", earlyBirdPrice: "$250", regularPrice: "$300" },
-  { category: "Industry (Author)", earlyBirdPrice: "$400", regularPrice: "$500" },
-  { category: "Student (Listener)", earlyBirdPrice: "$75", regularPrice: "$100" },
-  { category: "Academic (Listener)", earlyBirdPrice: "$125", regularPrice: "$150" },
-  { category: "Industry (Listener)", earlyBirdPrice: "$200", regularPrice: "$250" }
+  { category: "Student (Author)", earlyBirdPrice: "$100", regularPrice: "$150" },
+  { category: "Academic (Author)", earlyBirdPrice: "$200", regularPrice: "$250" },
+  { category: "Industry (Author)", earlyBirdPrice: "$300", regularPrice: "$350" },
+  { category: "Student (Listener)", earlyBirdPrice: "$25", regularPrice: "$50" },
+  { category: "Academic (Listener)", earlyBirdPrice: "$50", regularPrice: "$75" },
+  { category: "Industry (Listener)", earlyBirdPrice: "$75", regularPrice: "$100" }
 ];
 
 const registrationFaqs = [

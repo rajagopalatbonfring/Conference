@@ -150,17 +150,17 @@ export default function ClientContent() {
                         <div>
                           <div className="text-sm font-semibold text-emerald-300 mb-1">Email Us</div>
                           <a
-                            href="mailto:info@icleas2026.org"
+                            href="mailto:info@scientiaforum.org"
                             className="text-white hover:text-emerald-300 transition-colors font-medium"
                           >
-                            info@icleas2026.org
+                            info@scientiaforum.org
                           </a>
                           <div className="text-sm text-teal-300 mt-1">Usually reply within 24 hours</div>
                         </div>
                       </div>
 
                       {/* Phone */}
-                      <div className="flex items-start gap-4 group">
+                      <div className="flex items-start gap-4 group hidden">
                         <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-all">
                           <Phone className="w-6 h-6 text-emerald-400" />
                         </div>

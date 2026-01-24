@@ -1000,9 +1000,8 @@ export default function Home() {
         </section>
 
         {/* Distinguished Speakers - Magazine Layout */}
-        <section className="bg-orange-50/10 py-24 md:py-32">
+        {/* <section className="bg-orange-50/10 py-24 md:py-32">
           <div className="container mx-auto px-4">
-            {/* Section Header */}
             <div className="text-center mb-20">
               <div className="inline-flex items-center gap-3 mb-6">
                 <Star className="w-7 h-7 text-amber-500" />
@@ -1017,11 +1016,9 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Speakers Grid */}
             <div className="max-w-7xl mx-auto space-y-16">
               {speakers.map((speaker, idx) => (
                 <div key={speaker.id} className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
-                  {/* Image Side */}
                   <div className="lg:w-1/2">
                     <div className="relative group">
                       <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -1041,7 +1038,6 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  {/* Content Side */}
                   <div className="lg:w-1/2 space-y-6">
                     <div>
                       <div className="inline-block mb-4">
@@ -1081,7 +1077,6 @@ export default function Home() {
               ))}
             </div>
             
-            {/* View All Button */}
             <div className="text-center mt-20">
               <a 
                 className="px-10 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl inline-flex items-center gap-3"
@@ -1092,7 +1087,72 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </section> */}
+        <section className="bg-orange-50/10 py-24 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <Star className="w-7 h-7 text-amber-500" />
+                <span className="text-slate-600 uppercase tracking-widest text-sm font-semibold">
+                  Keynote & Invited Speakers
+                </span>
+                <Star className="w-7 h-7 text-amber-500" />
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+                Distinguished Speakers at ICLEAS 2026
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Gain insights from world-class experts driving advancements in life sciences, environmental research, biotechnology, and sustainable technologies
+              </p>
+            </div>
+
+            {/* Coming Soon placeholder */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 md:p-16 shadow-xl border border-slate-100 text-center space-y-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-100 text-amber-600 mx-auto">
+                  <svg
+                    className="w-10 h-10"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+
+                <h3 className="text-4xl md:text-5xl font-bold text-slate-800">
+                  We Will Update Soon!
+                </h3>
+
+                <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                  The list of our distinguished Keynote and Invited Speakers for ICLEAS 2026 is currently being finalized. 
+                  Stay tuned — world-class researchers and experts will be announced here very soon!
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-4 pt-6">
+                  <a
+                    href="/speakers"
+                    className="px-8 py-4 bg-slate-800 text-white rounded-full font-semibold text-lg hover:bg-slate-900 transition-all shadow-lg inline-flex items-center gap-2"
+                  >
+                    Check Back Later
+                    <ChevronRight className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-20 text-slate-500 text-lg">
+              <p>Exciting speaker announcements coming in the next few weeks • Watch this space!</p>
+            </div>
+          </div>
         </section>
+
 
         {/* Why ICLEAS Matters - Feature Section */}
         <section className="relative py-32 overflow-hidden bg-gradient-to-br from-emerald-50 to-teal-50">

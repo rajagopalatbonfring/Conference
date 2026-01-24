@@ -108,7 +108,7 @@ export default function SpeakersPage() {
       <div className="space-y-0">
         
         {/* Keynote Speakers Section */}
-        <section className="bg-white py-24 md:py-32">
+        {/* <section className="bg-white py-24 md:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
@@ -124,11 +124,10 @@ export default function SpeakersPage() {
                 </p>
               </div>
               
-              {/* Speaker Cards */}
               <div className="space-y-16">
                 {speakers.map((speaker, idx) => (
                   <div key={speaker.id} className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-start`}>
-                    {/* Image Side */}
+
                     <div className="lg:w-5/12">
                       <div className="relative group">
                         <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"></div>
@@ -149,7 +148,6 @@ export default function SpeakersPage() {
                       </div>
                     </div>
                     
-                    {/* Content Side */}
                     <div className="lg:w-7/12 space-y-6">
                       <div>
                         <div className="inline-block mb-4">
@@ -170,7 +168,6 @@ export default function SpeakersPage() {
                           </p>
                         </div>
                         
-                        {/* Social Links – placeholder */}
                         <div className="flex gap-2">
                           <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-emerald-100 flex items-center justify-center transition-colors">
                             <Linkedin className="w-5 h-5 text-slate-600" />
@@ -190,7 +187,6 @@ export default function SpeakersPage() {
                         {speaker.bio}
                       </p>
                       
-                      {/* Research Interests */}
                       <div>
                         <h4 className="font-bold text-slate-900 mb-3">Key Research Areas</h4>
                         <div className="flex flex-wrap gap-2">
@@ -205,7 +201,6 @@ export default function SpeakersPage() {
                         </div>
                       </div>
                       
-                      {/* Keynote Talk */}
                       <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-6 border border-teal-100">
                         <div className="flex items-center gap-2 mb-3">
                           <BrainCircuit className="w-5 h-5 text-teal-600" />
@@ -227,6 +222,66 @@ export default function SpeakersPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section> */}
+        <section className="bg-white py-24 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full mb-6">
+                  <MicVocal className="w-5 h-5 text-emerald-600" />
+                  <span className="text-sm font-bold text-emerald-900 uppercase tracking-wider">
+                    Keynote Speakers ICLEAS 2026
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                  Featured Keynote Speakers
+                </h2>
+                <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                  Hear from global leaders driving advancements in life sciences, environmental protection, biotechnology, and sustainable innovation
+                </p>
+              </div>
+
+              {/* Coming Soon Placeholder */}
+              <div className="max-w-5xl mx-auto">
+                <div className="bg-gradient-to-br from-emerald-50 via-teal-50 to-white rounded-3xl p-12 md:p-16 shadow-2xl border border-emerald-100/50 text-center space-y-10 relative overflow-hidden">
+                  {/* Subtle background decoration */}
+                  <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-100/30 rounded-full blur-3xl"></div>
+                  <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-teal-100/30 rounded-full blur-3xl"></div>
+
+                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-700 mx-auto shadow-inner">
+                    <svg
+                      className="w-12 h-12"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-5xl md:text-6xl font-extrabold text-slate-800 tracking-tight">
+                    We Will Update Soon!
+                  </h3>
+
+                  <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-light">
+                    Our distinguished Keynote Speakers for ICLEAS 2026 are currently being confirmed. 
+                    <br className="hidden md:block" />
+                    World-renowned experts in life sciences, environmental sciences, biotechnology & sustainability will be revealed here shortly.
+                  </p>
+
+                  <p className="text-lg text-slate-500 pt-6 italic">
+                    Exciting announcements expected in the coming weeks • Stay connected!
+                  </p>
+                </div>
               </div>
             </div>
           </div>

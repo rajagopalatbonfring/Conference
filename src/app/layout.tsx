@@ -38,7 +38,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
-        <WhatsAppFloat />
+        {/* <WhatsAppFloat /> */}
       </body>
     </html>
   );
