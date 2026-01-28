@@ -91,10 +91,10 @@ import {
 } from 'lucide-react';
 
 const importantDates = [
-  { title: "Paper Submission Deadline", date: "March 15, 2026" },
-  { title: "Notification of Acceptance", date: "April 30, 2026" },
-  { title: "Early Bird Registration", date: "May 15, 2026" },
-  { title: "Conference Dates", date: "June 25-26, 2026" }
+  { title: "Paper Submission Deadline", date: "April 30, 2026" },
+  { title: "Notification of Acceptance", date: "May 30, 2026" },
+  { title: "Early Bird Registration", date: "June 15, 2026" },
+  { title: "Conference Dates", date: "July 23-24, 2026" }
 ];
 
 export default function Footer() {
@@ -149,28 +149,13 @@ export default function Footer() {
                 <div className="flex items-center gap-2 mb-4">
                   <a href="/" className="flex items-center gap-4 group">
                     <div className="relative">
-                      
-                      {/* Logo container */}
-                      <div className="relative">
-                        <div className="w-12 h-12 rounded-2xl bg-none flex items-center justify-center  transition-all duration-300 group-hover:scale-105">
-                          <Leaf className="w-12 h-12 text-emerald-600" />
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="text-2xl font-black text-transparent bg-clip-text bg-white group-hover:from-emerald-600 group-hover:via-teal-600 group-hover:to-lime-700 transition-all duration-300">
-                        ICLEAS 20<span className="text-orange-400">26</span>
-                      </div>
+                      <img className="w-[360px]" src="/images/icon.jpg" alt="" />
                     </div>
                   </a>
                 </div>
-                <p className="text-teal-200 leading-relaxed mb-6">
-                  International Conference on Life, Environmental & Applied Sciences
-                </p>
                 <div className="flex items-center gap-2 text-teal-200 mb-2">
                   <Calendar className="w-4 h-4" />
-                  <span className="text-sm">June 25-26, 2026</span>
+                  <span className="text-sm">July 23-24, 2026</span>
                 </div>
                 <div className="flex items-center gap-2 text-teal-200">
                   <Globe className="w-4 h-4" />

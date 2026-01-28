@@ -155,7 +155,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <Calendar className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-white">June 25-26, 2026</span>
+                <span className="text-white">July 23-24, 2026</span>
               </div>
               <div className="hidden md:flex items-center gap-2">
                 <Globe className="w-3.5 h-3.5 text-emerald-400" />
